@@ -1,0 +1,130 @@
+.home_screen4 {
+  height: 620px;
+  width: 1100px;
+}
+.home_screen4 > .cont1 {
+  height: 120px;
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home_screen4 > .cont1 > .item1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+.home_screen4 > .cont1 > .item2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.home_screen4 > .cont2 {
+  height: 530px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home_screen4 > .cont2 > .sub1 {
+  height: 460px;
+  width: 530px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 75px);
+  row-gap: 22px;
+  column-gap: 75px;
+}
+.name,
+.outlet {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  /* grid-row-start: 1;
+  grid-row-end: 3; */
+}
+
+.home_screen4 > .cont2 > .sub1 > .inputDiv {
+  height: 75px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+.home_screen4 > .cont2 > .sub1 > .inputDiv > label {
+  font-size: 16px;
+}
+.home_screen4 > .cont2 > .sub1 > .inputDiv > input {
+  border-radius: 18px;
+  box-shadow: none;
+  border: none;
+  height: 42px;
+  width: 230px;
+  border-radius: 18px;
+  background-color: var(--white-color);
+  padding-left: 15px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.name > #name1,
+.outlet > #type {
+  width: 530px;
+}
+.home_screen4 > .cont2 > .sub1 > .submitButton {
+  height: 45px;
+  width: 130px;
+  margin-top: 32px;
+}
+.home_screen4 > .cont2 > .sub2 {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-color: var(--round-color);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  /* clip-path: polygon(
+    41.25% 18.5%,
+    45.17% 17.78%,
+    49.16% 17.78%,
+    53.08% 17.78%,
+    56.48% 18.9%,
+    60.09% 21.39%,
+    63.23% 24.25%,
+    66.15% 27.59%,
+    68.46% 30.22%,
+    70.58% 33.01%,
+    73.58% 37.53%,
+    76.71% 42.49%,
+    78.62% 48.04%,
+    79.01% 53.9%,
+    78.62% 60.25%,
+    76.43% 68.29%,
+    74.24% 76.32%,
+    28.75% 75%,
+    25% 69.56%,
+    22.25% 64.88%,
+    20.82% 59.6%,
+    19.5% 54.75%,
+    19.5% 47.83%,
+    22.19% 41.46%,
+    25% 37%,
+    27.86% 32.45%,
+    31.05% 28.29%,
+    33.56% 25%,
+    35.48% 22.49%,
+    38.07% 20.07%
+  ); */
+}
+.home_screen4 > .cont2 > .sub2 > .imgTag {
+  height: 420px;
+  width: 380px;
+  background-image: url("Assets/main-page-4.png");
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+}

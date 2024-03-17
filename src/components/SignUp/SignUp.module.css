@@ -1,0 +1,245 @@
+.mainDiv2 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 110px;
+}
+.mainDiv2 > .cont1 {
+  height: 475px;
+  width: 450px;
+}
+.mainDiv2 > .cont1 > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.mainDiv2 > .cont2 {
+  height: 680px;
+  width: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.mainDiv2 > .cont2 > .item1 {
+  height: 60px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: 700;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.mainDiv2 > .cont2 > .item2 {
+  height: 220px;
+  width: 530px;
+  display: grid;
+  grid-template-rows: 45px 45px 45px;
+  grid-template-columns: 250px 250px;
+  column-gap: 30px;
+  row-gap: 35px;
+}
+.mainDiv2 > .cont2 > .item2 > .firstname {
+  height: 45px;
+  width: 250px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.mainDiv2 > .cont2 > .item2 > .lastname {
+  height: 45px;
+  width: 250px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.mainDiv2 > .cont2 > .item2 > .email {
+  height: 45px;
+  width: 530px;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.mainDiv2 > .cont2 > .item2 > .password {
+  height: 45px;
+  width: 250px;
+  position: relative;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.mainDiv2 > .cont2 > .item2 > .confirmpassword {
+  height: 45px;
+  width: 250px;
+  position: relative;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.mainDiv2 > .cont2 > .item2 > .password > input,
+.mainDiv2 > .cont2 > .item2 > .confirmpassword > input,
+.mainDiv2 > .cont2 > .item2 > .email > input,
+.mainDiv2 > .cont2 > .item2 > .firstname > input,
+.mainDiv2 > .cont2 > .item2 > .lastname > input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: var(--white-color);
+  border-radius: 18px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.mainDiv2 > .cont2 > .item2 > .password > input::placeholder,
+.mainDiv2 > .cont2 > .item2 > .confirmpassword > input::placeholder,
+.mainDiv2 > .cont2 > .item2 > .email > input::placeholder,
+.mainDiv2 > .cont2 > .item2 > .firstname > input::placeholder,
+.mainDiv2 > .cont2 > .item2 > .lastname > input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.icon_styling {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  opacity: 30%;
+  background-color: transparent;
+}
+.mainDiv2 > .cont2 > .item3 {
+  height: 45px;
+  width: 490px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.mainDiv2 > .cont2 > .item3 > div {
+  height: 45px;
+  width: 135px;
+}
+.mainDiv2 > .cont2 > .item3 > div > div {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 35px;
+}
+.mainDiv2 > .cont2 > .item3 > div > .hoverme:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.mainDiv2 > .cont2 > .item4 {
+  height: 50px;
+  width: 160px;
+  margin-top: 10px;
+}
+.mainDiv2 > .cont2 > .item4 > div {
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 35px;
+}
+.mainDiv2 > .cont2 > .item5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 25px;
+  width: 525px;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.mainDiv2 > .cont2 > .item5 > .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 1px;
+  width: 99%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mainDiv2 > .cont2 > .item5 > .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 150px;
+  display: grid;
+  place-content: center;
+  size: 16px;
+}
+.mainDiv2 > .cont2 > .item6 {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mainDiv2 > .cont2 > .item6 > .but1,
+.mainDiv2 > .cont2 > .item6 > .but2 {
+  height: 100%;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 35px;
+  background-color: var(--white-color);
+  border: 1.6px solid #e0e2e9;
+  cursor: pointer;
+}
+.mainDiv2 > .cont2 > .item6 > .but1 > div,
+.mainDiv2 > .cont2 > .item6 > .but2 > div {
+  font-size: 14px;
+  height: 20px;
+  width: 70px;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+}
+.mainDiv2 > .cont2 > .item6 > .but1 > img,
+.mainDiv2 > .cont2 > .item6 > .but2 > img {
+  height: 20px;
+  width: 20px;
+}
+.mainDiv2 > .cont2 > .item6 > .but1 > div,
+img,
+.mainDiv2 > .cont2 > .item6 > .but2 > div,
+img {
+  background-color: inherit;
+}
+.mainDiv2 > .cont2 > .item7 {
+  position: relative;
+  left: -105px;
+  height: 25px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.mainDiv2 > .cont2 > .item7 > .already {
+  height: 25px;
+  width: 240px;
+  color: #969ab8;
+  font-size: 18px;
+  display: grid;
+  place-content: center;
+}
+.mainDiv2 > .cont2 > .item7 > .login {
+  width: 80px;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

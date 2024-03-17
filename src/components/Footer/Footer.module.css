@@ -1,0 +1,112 @@
+.home_screen5 {
+  height: 600px;
+  width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  background-color: var(--round-color);
+  border-radius: 20px;
+}
+.home_screen5 > .cont1 {
+  height: 300px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 180px;
+}
+.home_screen5 > .cont1 > .sub {
+  height: 300px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 63px;
+  font-size: 0.95rem;
+}
+.home_screen5 > .cont1 > .sub > .item1 {
+  height: 30px;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 20px;
+}
+.home_screen5 > .cont1 > .sub > .item2 {
+  height: 170px;
+  width: fit-content;
+}
+.home_screen5 > .cont1 > .sub > .item2 > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+}
+.home_screen5 > .cont1 > .sub > .item2 > ul > li {
+  height: 25px;
+  font-size: 16px;
+}
+.home_screen5 > .cont2 {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.home_screen5 > .cont2 > .sub1 {
+  height: 90%;
+  width: 130px;
+}
+.home_screen5 > .cont2 > .sub1 > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.home_screen5 > .cont2 > .sub2 {
+  height: 30px;
+  width: 200px;
+}
+.home_screen5 > .cont2 > .sub2 > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.home_screen5 > .cont2 > .sub2 > ul > li {
+  display: inline-flex;
+  place-content: center;
+  align-items: center;
+  height: 30px;
+  width: 40px;
+  font-size: 1.3rem;
+}
+.iconFill {
+  background-color: transparent;
+  font-size: 25px;
+}
+.home_screen5 > .cont2 > .sub3 {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.home_screen5 > .cont2 > .sub3 > div {
+  font-size: 18px;
+}
+.home_screen5 > .cont2 > .sub4 {
+  height: 50px;
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home_screen5 > .cont2 > .sub4 > div {
+  font-size: 18px;
+}

@@ -1,0 +1,205 @@
+.mainDiv1 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 110px;
+}
+.mainDiv1 > .cont1 {
+  height: 480px;
+  width: 450px;
+}
+.mainDiv1 > .cont1 > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: darken;
+}
+.mainDiv1 > .cont2 {
+  height: 640px;
+  width: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.mainDiv1 > .cont2 > .item1 {
+  height: 70px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: 700;
+  padding-left: 10px;
+}
+.mainDiv1 > .cont2 > .item2 {
+  height: auto;
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.mainDiv1 > .cont2 > .item2 > .email {
+  height: 45px;
+  width: 530px;
+}
+.mainDiv1 > .cont2 > .item2 > .email > input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: var(--white-color);
+  border-radius: 18px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.mainDiv1 > .cont2 > .item2 > .password {
+  height: 45px;
+  width: 530px;
+  position: relative;
+}
+
+.mainDiv1 > .cont2 > .item2 > .password > input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: var(--white-color);
+  border-radius: 18px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.mainDiv1 > .cont2 > .item2 > .email > input::placeholder,
+.mainDiv1 > .cont2 > .item2 > .password > input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.icon_styling {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  opacity: 40%;
+  background-color: transparent;
+}
+.mainDiv1 > .cont2 > .item3 {
+  height: 50px;
+  width: 160px;
+}
+.mainDiv1 > .cont2 > .item3 > div {
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 35px;
+}
+.mainDiv1 > .cont2 > .item4 {
+  height: 70px;
+  width: 525px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.mainDiv1 > .cont2 > .item4 > .forgot {
+  height: 25px;
+  width: fit-content;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 18px;
+}
+.mainDiv1 > .cont2 > .item4 > .or {
+  height: 25px;
+  width: 525px;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.mainDiv1 > .cont2 > .item4 > .or > .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 1px;
+  width: 99%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mainDiv1 > .cont2 > .item4 > .or > .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 130px;
+  display: grid;
+  place-content: center;
+  size: 16px;
+}
+.mainDiv1 > .cont2 > .item5 {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mainDiv1 > .cont2 > .item5 > .but1,
+.mainDiv1 > .cont2 > .item5 > .but2 {
+  height: 100%;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 35px;
+  background-color: var(--white-color);
+  border: 1.6px solid #e0e2e9;
+  cursor: pointer;
+}
+.mainDiv1 > .cont2 > .item5 > .but1 > div,
+.mainDiv1 > .cont2 > .item5 > .but2 > div {
+  font-size: 14px;
+  height: 20px;
+  width: 70px;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+}
+.mainDiv1 > .cont2 > .item5 > .but1 > img,
+.mainDiv1 > .cont2 > .item5 > .but2 > img {
+  height: 20px;
+  width: 20px;
+}
+.mainDiv1 > .cont2 > .item5 > .but1 > div,
+img,
+.mainDiv1 > .cont2 > .item5 > .but2 > div,
+img {
+  background-color: inherit;
+}
+.mainDiv1 > .cont2 > .item6 {
+  height: 25px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainDiv1 > .cont2 > .item6 > .dont {
+  height: 25px;
+  width: 220px;
+  color: #969ab8;
+  font-size: 18px;
+  display: grid;
+  place-content: center;
+}
+.mainDiv1 > .cont2 > .item6 > .signup {
+  height: 25px;
+  width: 80px;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

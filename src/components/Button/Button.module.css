@@ -1,0 +1,65 @@
+.btn_red_rect {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  /* transition: background-color 0.3s ease; */
+}
+.btn_white_rect {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+  color: var(--black-color);
+  background-color: var(--white-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  /* transition: background-color 0.5s ease; */
+}
+.btn_red_oval {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  display: grid;
+  place-content: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  /* transition: background-color 0.5s ease; */
+}
+.btn_white_oval {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  display: grid;
+  place-content: center;
+  color: var(--black-color);
+  background-color: var(--white-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+/* HOVER */
+.whiteovalHoverme {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}

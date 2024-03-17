@@ -1,0 +1,43 @@
+:root {
+  --hom-page-component-desc-text-color: #4b5563;
+}
+
+.mainDiv1 {
+  height: 432px;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+.mainDiv1 > .sub1 {
+  height: 430px;
+  width: 530px;
+  border-radius: 25px;
+  background-color: var(--box-color);
+}
+.mainDiv1 > .sub2 {
+  height: fit-content;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+}
+.mainDiv1 > .sub2 > .item1 {
+  width: 450px;
+  height: fit-content;
+  font-size: 28px;
+  font-weight: 700;
+}
+.mainDiv1 > .sub2 > .item1 > span {
+  color: var(--primary-color);
+}
+.mainDiv1 > .sub2 > .item2 {
+  height: 100px;
+  width: 440px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--hom-page-component-desc-text-color);
+}
