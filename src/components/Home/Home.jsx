@@ -54,83 +54,85 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className={styles.headdiv}>
       <Navbar />
-      <div className={styles.encloser1}>
-        <div className={styles.home_screen1}>
-          <div className={styles.cont1}>
-            <div className={styles.sub1}>Restaurant POS <br />software made simple!</div>
-            <div className={styles.sub2}>
-              Manages all your restaurant operations efficiently so that you can
-              focus on growing your brand, like a real boss!
+      <div className={styles.mainmain}>
+        <div className={styles.encloser1}>
+          <div className={styles.home_screen1}>
+            <div className={styles.cont1}>
+              <div className={styles.sub1}>Restaurant POS <br />software made simple!</div>
+              <div className={styles.sub2}>
+                Manages all your restaurant operations efficiently so that you can
+                focus on growing your brand, like a real boss!
+              </div>
+              <div className={styles.sub3}>
+                <Link to="/SignUp"><Button isColor="red" isShape="oval" content="SignUp" /></Link>
+              </div>
             </div>
-            <div className={styles.sub3}>
-              <Link to="/SignUp"><Button isColor="red" isShape="oval" content="SignUp" /></Link>
-            </div>
-          </div>
-          <div className={styles.cont2}>
-            <div className={styles.item1_circle}></div>
-            <div className={styles.item2_ellipse}></div>
-            <div className={styles.item3_img}>
-              <img src="/Assets/main-page-1.png" alt="" />
+            <div className={styles.cont2}>
+              <div className={styles.item1_circle}></div>
+              <div className={styles.item2_ellipse}></div>
+              <div className={styles.item3_img}>
+                <img src="/Assets/main-page-1.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.encloser2}>
-        <div className={styles.home_screen2}>
-          <div className={styles.cont1}>
-            <div className={styles.sub1}>Smart POS features</div>
-            <div className={styles.sub2}>A restaurant POS made for all your needs</div>
-            <div className={styles.sub3}>
-              A quick and easy-to-use restaurant billing software that makes
-              managing high order volumes butter smooth
+        <div className={styles.encloser2}>
+          <div className={styles.home_screen2}>
+            <div className={styles.cont1}>
+              <div className={styles.sub1}>Smart POS features</div>
+              <div className={styles.sub2}>A restaurant POS made for all your needs</div>
+              <div className={styles.sub3}>
+                A quick and easy-to-use restaurant billing software that makes
+                managing high order volumes butter smooth
+              </div>
             </div>
-          </div>
-          <div className={styles.cont2}>
-            <HomePageComponent myProp={obj1} />
+            <div className={styles.cont2}>
+              <HomePageComponent myProp={obj1} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.encloser3}>
-        <div className={styles.home_screen3}>
-          <div className={styles.cont1}>
-            <div className={styles.sub1}>
-              <div className={styles.item1}>
-                <div className={styles.imgTag}></div>
+        <div className={styles.encloser3}>
+          <div className={styles.home_screen3}>
+            <div className={styles.cont1}>
+              <div className={styles.sub1}>
+                <div className={styles.item1}>
+                  <div className={styles.imgTag}></div>
+                </div>
+                <div className={styles.item2}>Perfect for customers</div>
+                <div className={styles.item3}>
+                  A simply, clutter-free user-experience means customers can clearly
+                  engage with your food and drink offering.
+                </div>
               </div>
-              <div className={styles.item2}>Perfect for customers</div>
-              <div className={styles.item3}>
-                A simply, clutter-free user-experience means customers can clearly
-                engage with your food and drink offering.
+              <div className={styles.sub2}>
+                <div className={styles.item1}>
+                  <div className={styles.imgTag}> </div>
+                </div>
+                <div className={styles.item2}>Perfect for your restaurant</div>
+                <div className={styles.item3}>
+                  From family-run takeaways to large restaurant enterprises,
+                  TastyIgniter meets all expectations when managing your business.
+                </div>
               </div>
             </div>
-            <div className={styles.sub2}>
-              <div className={styles.item1}>
-                <div className={styles.imgTag}> </div>
+            <div className={styles.cont2}>
+              <div className={styles.sub1}>
+                Bring your restaurant onlilne with <span>DineDeck</span>
               </div>
-              <div className={styles.item2}>Perfect for your restaurant</div>
-              <div className={styles.item3}>
-                From family-run takeaways to large restaurant enterprises,
-                TastyIgniter meets all expectations when managing your business.
-              </div>
+              <button id="DemoButtonId" onClick={scrollToDiv} className={styles.sub2}>Try the demo</button>
             </div>
-          </div>
-          <div className={styles.cont2}>
-            <div className={styles.sub1}>
-              Bring your restaurant onlilne with <span>DineDeck</span>
-            </div>
-            <button id = "DemoButtonId" onClick = {scrollToDiv} className={styles.sub2}>Try the demo</button>
           </div>
         </div>
+        <div ref={divRef} className={styles.encloser4}>
+          <Demo></Demo>
+        </div>
+        <div className={styles.encloser5}>
+          <Footer></Footer>
+        </div>
       </div>
-      <div ref={divRef} className={styles.encloser4}>
-        <Demo></Demo>
-      </div>
-      <div className={styles.encloser5}>
-        <Footer></Footer>
-      </div>
-    </>
+    </div>
   )
 }
 
