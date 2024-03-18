@@ -114,7 +114,7 @@ const Home = () => {
             <div className={styles.sub1}>
               Bring your restaurant onlilne with <span>DineDeck</span>
             </div>
-            <div className={styles.sub2}>Try the demo</div>
+            <button className={styles.sub2}>Try the demo</button>
           </div>
         </div>
       </div>
