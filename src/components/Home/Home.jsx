@@ -120,7 +120,7 @@ const Home = () => {
             <div className={styles.sub1}>
               Bring your restaurant onlilne with <span>DineDeck</span>
             </div>
-            <button id = "DemoButtonId" onClick = {scrollToDiv} className={styles.sub2}>Try the demo</button>
+            <button id = "DemoButtonId" onClick = {scrollToDiv} className={styles.sub2}>Try Us</button>
           </div>
         </div>
       </div>
