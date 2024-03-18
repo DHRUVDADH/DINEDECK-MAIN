@@ -3,6 +3,7 @@ import styles from './Login.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
 import Navbar from '../Navbar/Navbar';
+import { Link } from 'react-router-dom';
 const Login = () => {
   const hioutline = <HiOutlineEye />;
 
@@ -44,8 +45,8 @@ const Login = () => {
           </div>
         </div>
         <div className={styles.item6}>
-          <div className={styles.dont}>Don't have an account?</div>
-          <div className={styles.signup}>Sign Up</div>
+          <div className={styles.dont}>Don't have an account?</div> 
+          <Link className={styles.Link} to="/SignUp"><button className={`${styles.signup} pointer_cursor`}>Sign Up</button></Link>
         </div>
 
       </div>

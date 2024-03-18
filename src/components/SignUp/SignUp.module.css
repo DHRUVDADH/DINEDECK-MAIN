@@ -219,9 +219,8 @@ img {
 }
 .mainDiv2 > .cont2 > .item7 {
   position: relative;
-  left: -105px;
   height: 25px;
-  width: 320px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -234,7 +233,7 @@ img {
   display: grid;
   place-content: center;
 }
-.mainDiv2 > .cont2 > .item7 > .login {
+.mainDiv2 > .cont2 > .item7 > .Link > .login {
   width: 80px;
   font-size: 18px;
   color: var(--primary-color);
@@ -242,4 +241,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  box-shadow: none;
+  border: none;
 }

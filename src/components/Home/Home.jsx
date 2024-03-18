@@ -6,6 +6,7 @@ import HomePageComponent from '../HomePageComponent/HomePageComponent'
 import Demo from '../Demo/Demo'
 import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
+import { useRef } from 'react'
 
 const Home = () => {
   const obj1 = [
@@ -46,6 +47,11 @@ const Home = () => {
     },
   ];
 
+  // Transfer to schedule demo button to that div
+  const divRef = useRef(document.getElementById("DemoButtonId"));
+  const scrollToDiv = () => {
+    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -114,11 +120,11 @@ const Home = () => {
             <div className={styles.sub1}>
               Bring your restaurant onlilne with <span>DineDeck</span>
             </div>
-            <button className={styles.sub2}>Try the demo</button>
+            <button id = "DemoButtonId" onClick = {scrollToDiv} className={styles.sub2}>Try the demo</button>
           </div>
         </div>
       </div>
-      <div className={styles.encloser4}>
+      <div ref={divRef} className={styles.encloser4}>
         <Demo></Demo>
       </div>
       <div className={styles.encloser5}>

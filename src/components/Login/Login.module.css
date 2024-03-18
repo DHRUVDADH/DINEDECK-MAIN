@@ -182,8 +182,9 @@ img {
   height: 25px;
   width: 320px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 .mainDiv1 > .cont2 > .item6 > .dont {
   height: 25px;
@@ -193,7 +194,7 @@ img {
   display: grid;
   place-content: center;
 }
-.mainDiv1 > .cont2 > .item6 > .signup {
+.mainDiv1 > .cont2 > .item6 > .Link > .signup {
   height: 25px;
   width: 80px;
   font-size: 18px;
@@ -202,4 +203,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  box-shadow: none;
+  border: none;
 }

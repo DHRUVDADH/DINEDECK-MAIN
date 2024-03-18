@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './SignUp.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
@@ -61,11 +62,11 @@ const SignUp = () => {
         </div>
         <div className={styles.item7}>
           <div className={styles.already}>Already have an account?</div>
-          <div className={styles.login}>Log In</div>
+          <Link className={styles.Link} to="/Login"><button className={`${styles.login} pointer_cursor`}>Log In</button></Link>
         </div>
 
       </div>
-    </div >
+    </div>
   )
 }
 
