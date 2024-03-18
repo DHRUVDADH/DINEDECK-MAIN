@@ -3,14 +3,32 @@ import styles from './SignUp.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const SignUp = () => {
+  const [firstname, setFirstname] = useState("abc@gmail.com");
+  const [lastname, setLastname] = useState("abc@123");
+  const [email, setEmail] = useState("abc@123");
+  const [password, setPassword] = useState("abc@123");
+  const [confirmpassword, setConfirmpassword] = useState("abc@123");
+
+  console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(event);
+    setFirstname(event.target[0].value);
+    setLastname(event.target[1].value);
+    setEmail(event.target[2].value);
+    setPassword(event.target[3].value);
+    setConfirmpassword(event.target[4].value);
+  }
   return (
     <div className={styles.mainDiv2}>
       <div className={styles.cont1}>
         <img src="/Assets/signup-page-1.png" alt="" />
       </div>
-      <div className={styles.cont2}>
+      <form onSubmit={onSubmit} className={styles.cont2}>
         <div className={styles.item1}>Sign Up</div>
         <div className={styles.item2}>
           <div className={styles.firstname}>
@@ -20,14 +38,14 @@ const SignUp = () => {
             <input type="text" placeholder='Last Name' />
           </div>
           <div className={styles.email}>
-            <input type="email" placeholder='Email' />
+            <input type="email" autoComplete='username' placeholder='Email' />
           </div>
           <div className={styles.password}>
-            <input type="password" placeholder="Password" />
+            <input type="password" autoComplete='new-password' placeholder="Password" />
             <HiOutlineEye className={styles.icon_styling} />
           </div>
           <div className={styles.confirmpassword}>
-            <input type="password" placeholder="Confirm Password" />
+            <input type="password" autoComplete='new-password' placeholder="Confirm Password" />
             <HiOutlineEye className={styles.icon_styling} />
           </div>
         </div>
@@ -43,7 +61,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className={styles.item4}>
-          <Button isColor="red" isShape="oval" content="Sign Up" />
+          <Button type='submit' isColor="red" isShape="oval" content="Sign Up" />
         </div>
         <div className={styles.item5}>
           <div className={styles.line}></div>
@@ -65,7 +83,7 @@ const SignUp = () => {
           <Link className={styles.Link} to="/Login"><button className={`${styles.login} pointer_cursor`}>Log In</button></Link>
         </div>
 
-      </div>
+      </form>
     </div>
   )
 }

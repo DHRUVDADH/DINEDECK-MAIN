@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 110px;
+  gap: 80px;
 }
 .mainDiv1 > .cont1 {
   height: 562px;
@@ -87,16 +87,16 @@
   opacity: 40%;
   background-color: transparent;
 }
-.mainDiv1 > .cont2 > .item3 {
+.mainDiv1 > .cont2 > .item2 > .submitbtn {
   height: 50px;
   width: 160px;
 }
-.mainDiv1 > .cont2 > .item3 > div {
+.mainDiv1 > .cont2 > .item2 > .submitbtn > button {
   font-size: 18px;
   font-weight: 700;
   border-radius: 35px;
 }
-.mainDiv1 > .cont2 > .item4 {
+.mainDiv1 > .cont2 > .item3 {
   height: 70px;
   width: 525px;
   display: flex;
@@ -104,20 +104,20 @@
   align-items: flex-end;
   flex-direction: column;
 }
-.mainDiv1 > .cont2 > .item4 > .forgot {
+.mainDiv1 > .cont2 > .item3 > .forgot {
   height: 25px;
   width: fit-content;
   color: var(--primary-color);
   font-weight: 600;
   font-size: 18px;
 }
-.mainDiv1 > .cont2 > .item4 > .or {
+.mainDiv1 > .cont2 > .item3 > .or {
   height: 25px;
   width: 525px;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
 }
-.mainDiv1 > .cont2 > .item4 > .or > .line {
+.mainDiv1 > .cont2 > .item3 > .or > .line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,7 +127,7 @@
   border: none;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.mainDiv1 > .cont2 > .item4 > .or > .text {
+.mainDiv1 > .cont2 > .item3 > .or > .text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -138,15 +138,15 @@
   place-content: center;
   size: 16px;
 }
-.mainDiv1 > .cont2 > .item5 {
+.mainDiv1 > .cont2 > .item4 {
   height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.mainDiv1 > .cont2 > .item5 > .but1,
-.mainDiv1 > .cont2 > .item5 > .but2 {
+.mainDiv1 > .cont2 > .item4 > .but1,
+.mainDiv1 > .cont2 > .item4 > .but2 {
   height: 100%;
   width: 160px;
   display: flex;
@@ -158,8 +158,8 @@
   border: 1.6px solid #e0e2e9;
   cursor: pointer;
 }
-.mainDiv1 > .cont2 > .item5 > .but1 > div,
-.mainDiv1 > .cont2 > .item5 > .but2 > div {
+.mainDiv1 > .cont2 > .item4 > .but1 > div,
+.mainDiv1 > .cont2 > .item4 > .but2 > div {
   font-size: 14px;
   height: 20px;
   width: 70px;
@@ -167,18 +167,18 @@
   place-content: center;
   font-weight: 600;
 }
-.mainDiv1 > .cont2 > .item5 > .but1 > img,
-.mainDiv1 > .cont2 > .item5 > .but2 > img {
+.mainDiv1 > .cont2 > .item4 > .but1 > img,
+.mainDiv1 > .cont2 > .item4 > .but2 > img {
   height: 20px;
   width: 20px;
 }
-.mainDiv1 > .cont2 > .item5 > .but1 > div,
+.mainDiv1 > .cont2 > .item4 > .but1 > div,
 img,
-.mainDiv1 > .cont2 > .item5 > .but2 > div,
+.mainDiv1 > .cont2 > .item4 > .but2 > div,
 img {
   background-color: inherit;
 }
-.mainDiv1 > .cont2 > .item6 {
+.mainDiv1 > .cont2 > .item5 {
   height: 25px;
   width: 320px;
   display: flex;
@@ -186,7 +186,7 @@ img {
   align-items: center;
   gap: 8px;
 }
-.mainDiv1 > .cont2 > .item6 > .dont {
+.mainDiv1 > .cont2 > .item5 > .dont {
   height: 25px;
   width: 220px;
   color: #969ab8;
@@ -194,7 +194,7 @@ img {
   display: grid;
   place-content: center;
 }
-.mainDiv1 > .cont2 > .item6 > .Link > .signup {
+.mainDiv1 > .cont2 > .item5 > .Link > .signup {
   height: 25px;
   width: 80px;
   font-size: 18px;
