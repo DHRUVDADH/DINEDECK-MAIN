@@ -7,12 +7,12 @@
   gap: 110px;
 }
 .mainDiv1 > .cont1 {
-  height: 480px;
-  width: 450px;
+  height: 562px;
+  width: 528px;
 }
 .mainDiv1 > .cont1 > img {
   height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
   object-position: center;
   mix-blend-mode: darken;
