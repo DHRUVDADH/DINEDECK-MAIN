@@ -3,6 +3,7 @@ import styles from './Login.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
 import Navbar from '../Navbar/Navbar';
+
 const Login = () => {
   const hioutline = <HiOutlineEye />;
 

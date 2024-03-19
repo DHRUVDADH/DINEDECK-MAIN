@@ -2,9 +2,26 @@ import React from 'react'
 import styles from './SignUp.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
+// import { signUp } from '../../services/operations/authAPI';
+import { apiConnector } from '../../services/apiconnector';
 
+const submitHandler =async (e)=>
+{
+  e.preventDefault();
+  try{
+    const email = "dscdsf"
+    const firstname="dafdf"
+   const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{email , firstname})
+   console.log(response)
+  }catch(err){
+    console.log(err.msg)
+  }
+}
 const SignUp = () => {
-  return (
+  return ( 
+    
+    <form onSubmit={submitHandler}>
+
     <div className={styles.mainDiv2}>
       <div className={styles.cont1}>
         <img src="/Assets/signup-page-1.png" alt="" />
@@ -19,7 +36,7 @@ const SignUp = () => {
             <input type="text" placeholder='Last Name' />
           </div>
           <div className={styles.email}>
-            <input type="email" placeholder='Email' />
+            <input type="email" placeholder='Email'  />
           </div>
           <div className={styles.password}>
             <input type="password" placeholder="Password" />
@@ -42,7 +59,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className={styles.item4}>
-          <Button isColor="red" isShape="oval" content="Sign Up" />
+          <Button isColor="red" isShape="oval" content="Sign Up" type="submit"/>
         </div>
         <div className={styles.item5}>
           <div className={styles.line}></div>
@@ -61,11 +78,12 @@ const SignUp = () => {
         </div>
         <div className={styles.item7}>
           <div className={styles.already}>Already have an account?</div>
-          <div className={styles.login}>Log In</div>
+          <div className={styles.login} >Log In</div>
         </div>
 
       </div>
     </div >
+    </form>
   )
 }
 
