@@ -6,9 +6,10 @@ require("dotenv").config();
 const signUp = async (req, res) => {
     try{
         const{firstname,lastname,email,password,confirmpassword,accountType} = req.body;                                   
-        console.log(accountType)
+        // console.log(accountType)
     
         if(!firstname || !lastname || !email || !password || !confirmpassword ){                //validate krlo means all inbox are filled or not;
+            
                 return res.status(403).json({
                     success:false,
                     message:"All fields are required",
@@ -50,7 +51,7 @@ const signUp = async (req, res) => {
             // additionalDetails:profileDetails._id,
           
         })
-  
+        console.log('submiteed');
         return res.status(200).json({                      //return res
             success:true,
             user,
@@ -81,6 +82,7 @@ const login = async (req, res) => {
         
         const user = await User.findOne({email});          //user check exist or not
         if(!user){
+            console.log('not registertd');
             return res.status(401).json({
                 success:false,
                 message:"User is not registrered, please signup first",
@@ -109,8 +111,10 @@ const login = async (req, res) => {
                 user,
                 message:'Logged in successfully',
             })
+            console.log('loging ok');
       }
         else {
+            console.log('wrong password');
             return res.status(401).json({
                 success:false,
                 message:'Password is incorrect',

@@ -10,13 +10,13 @@ import { apiConnector } from '../../services/apiconnector';
 const SignUp = () => {
 
 
-const [firstname, setFirstname] = useState("abc@gmail.com");
-  const [lastname, setLastname] = useState("abc@123");
-  const [email, setEmail] = useState("abc@123");
-  const [password, setPassword] = useState("abc@123");
-  const [confirmpassword, setConfirmpassword] = useState("abc@123");
+const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmpassword] = useState("");
 
-  console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
+  // console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
 
   const onSubmit = async (event) => {
 
@@ -29,13 +29,12 @@ const [firstname, setFirstname] = useState("abc@gmail.com");
     
     const accountType = "Customer";
     try{
-   
       const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{firstname,lastname,email,password,confirmpassword,accountType})
       console.log(response)
      }catch(err){
        console.log(err.msg)
      }
-
+     
 
   }
 

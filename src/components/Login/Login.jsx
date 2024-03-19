@@ -3,6 +3,7 @@ import styles from './Login.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
 import Navbar from '../Navbar/Navbar';
+import { apiConnector } from '../../services/apiconnector';
 import { Link } from 'react-router-dom';
 
 
@@ -10,13 +11,18 @@ const Login = () => {
   const [email, setEmail] = useState("dhruv@gmail.com");
   const [password, setPassword] = useState("dhruv@123");
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
     setEmail(event.target[0].value);
     setPassword(event.target[1].value);
 
-    console.log(`${email} ${password}`);
+    try{
+      const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/login",{email,password})
+      console.log(response)
+     }catch(err){
+       console.log(err.msg)
+     }
   }
 
   const [showPassword, setShowPassword] = useState(false);

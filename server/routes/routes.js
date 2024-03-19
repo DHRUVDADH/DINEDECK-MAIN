@@ -6,7 +6,7 @@ const { login, signUp,changePassword,} = require("../controller/Auth")
 // const { resetPasswordToken,  resetPassword,} = require("../controllers/ResetPassword")
 // const { auth } = require("../middlewares/auth")
 
-router.post("/login", login)                      
+router.post("/login",login)                      
 router.post("/signup", signUp)                       
 // router.post("/changepassword", auth, changePassword)     
 
