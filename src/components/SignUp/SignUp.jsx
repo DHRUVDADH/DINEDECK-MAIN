@@ -27,10 +27,10 @@ const [firstname, setFirstname] = useState("abc@gmail.com");
     setPassword(event.target[3].value);
     setConfirmpassword(event.target[4].value);
     
-
+    const accountType = "Customer";
     try{
    
-      const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{firstname,lastname,email,password,confirmpassword,})
+      const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{firstname,lastname,email,password,confirmpassword,accountType})
       console.log(response)
      }catch(err){
        console.log(err.msg)

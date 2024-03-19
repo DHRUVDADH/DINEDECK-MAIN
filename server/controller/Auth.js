@@ -5,16 +5,17 @@ require("dotenv").config();
 
 const signUp = async (req, res) => {
     try{
-        const{firstName, lastName, email, password, confirmPassword, accountType} = req.body;                                   
+        const{firstname,lastname,email,password,confirmpassword,accountType} = req.body;                                   
+        console.log(accountType)
     
-        if(!firstName || !lastName || !email || !password || !confirmPassword ){                //validate krlo means all inbox are filled or not;
+        if(!firstname || !lastname || !email || !password || !confirmpassword ){                //validate krlo means all inbox are filled or not;
                 return res.status(403).json({
                     success:false,
                     message:"All fields are required",
                 })
            }
 
-        if(password !== confirmPassword){                                            //both password must be matched 
+        if(password !== confirmpassword){                                            //both password must be matched 
             return res.status(400).json({
                 success:false,
                 message:'Password and ConfirmPassword Value does not match, please try again',
@@ -39,12 +40,12 @@ const signUp = async (req, res) => {
         
         const user = await User.create({
             
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password:hashedPassword,
             // active,
-            accountType: accountType,
+            accountType : accountType,
 			// approved: approved,
             // additionalDetails:profileDetails._id,
           
