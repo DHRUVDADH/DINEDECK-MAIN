@@ -18,6 +18,13 @@ const Login = () => {
     console.log(`${email} ${password}`);
   }
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+
   return (
     <div className={styles.mainDiv1}>
       <div className={styles.cont1}>
@@ -30,8 +37,14 @@ const Login = () => {
             <input type="email" autoComplete='username' placeholder='Email' />
           </div>
           <div className={styles.password}>
-            <input type="password" autoComplete='current-password' placeholder="Password" />
-            <HiOutlineEye className={styles.icon_styling} />
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete='current-password'
+              placeholder="Password"
+            />
+            <HiOutlineEye onClick={toggleShowPassword} className={styles.icon_styling} />
           </div>
           <div className={styles.submitbtn}>
             <Button type='submit' isColor="red" isShape="oval" content="Log In" />

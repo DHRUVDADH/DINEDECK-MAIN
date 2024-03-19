@@ -1,0 +1,97 @@
+.navigation2 {
+  width: 1380px;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation2 > .cont1 {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+}
+.navigation2 > .cont1 > .sub1 {
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  display: grid;
+  place-content: center;
+}
+.navigation2 > .cont1 > .sub2 {
+  height: 100%;
+  width: 90px;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+.navigation2 > .cont1 > .sub2 > img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  transform: scale(120%);
+}
+.navigation2 > .cont1 > .sub3 {
+  height: 40px;
+  width: 110px;
+}
+.navigation2 > .cont2 {
+  width: 260px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.navigation2 > .cont2 > .sub1 {
+  height: 100%;
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.navigation2 > .cont2 > .sub1 > .icon {
+  height: 40px;
+  width: 40px;
+}
+.navigation2 > .cont2 > .sub1 > .icon > button {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: none;
+  border: none;
+  display: grid;
+  place-content: center;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  background-color: var(--white-color);
+}
+.navigation2 > .cont2 > .sub2 {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.navigation2 > .cont2 > .sub2 > .name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.navigation2 > .cont2 > .sub2 > .symbol {
+  height: 40px;
+  width: 40px;
+  box-shadow: none;
+  border: none;
+}
+.navigation2 > .cont2 > .sub2 > .symbol > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}

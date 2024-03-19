@@ -1,34 +1,34 @@
-.navigation {
+.navigation1 {
   height: 130px;
   width: 1240px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navigation > .cont1 {
+.navigation1 > .cont1 {
   height: 80px;
   width: 110px;
 }
-.navigation > .cont1 > img  {
+.navigation1 > .cont1 > img  {
   width: auto;
   height: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
 }
-.navigation > .cont2 {
+.navigation1 > .cont2 {
   height: 25px;
   width: 520px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navigation > .cont2 > div {
+.navigation1 > .cont2 > div {
   height: 25px;
   width: fit-content;
   font-size: 16px;
 }
-.navigation > .cont3 {
+.navigation1 > .cont3 {
   height: 40px;
   width: 300px;
   display: flex;
@@ -36,11 +36,11 @@
   align-items: center;
   gap: 30px;
 }
-.navigation > .cont3 > div {
+.navigation1 > .cont3 > div {
   height: 40px;
   width: 110px;
 }
-.navigation > .cont3 > div > .Link > div {
+.navigation1 > .cont3 > div > .Link > div {
   font-size: 12px;
   font-weight: 700;
   line-height: 18px;

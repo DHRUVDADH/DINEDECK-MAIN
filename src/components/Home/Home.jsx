@@ -7,6 +7,8 @@ import Demo from '../Demo/Demo'
 import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
+import Manager from '../Manager/Manager'
+
 
 const Home = () => {
   const obj1 = [
@@ -128,7 +130,7 @@ const Home = () => {
         <div ref={divRef} className={styles.encloser4}>
           <Demo></Demo>
         </div>
-        <div className={styles.encloser5}>
+        <div className={styles.encloser6}>
           <Footer></Footer>
         </div>
       </div>

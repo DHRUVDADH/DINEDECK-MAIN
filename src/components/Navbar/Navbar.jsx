@@ -6,7 +6,7 @@ import '../../App.css'
 
 const Navbar = () => {
   return (
-    <div className={styles.navigation}>
+    <div className={styles.navigation1}>
       <div className={`${styles.cont1} pointer_cursor`}>
         <img src={'/Assets/logo.png'} alt="logo" />
       </div>

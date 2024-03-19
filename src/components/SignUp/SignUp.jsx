@@ -15,14 +15,24 @@ const SignUp = () => {
   console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
   const onSubmit = (event) => {
     event.preventDefault();
-
-    console.log(event);
     setFirstname(event.target[0].value);
     setLastname(event.target[1].value);
     setEmail(event.target[2].value);
     setPassword(event.target[3].value);
     setConfirmpassword(event.target[4].value);
   }
+
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const toggleShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <div className={styles.mainDiv2}>
       <div className={styles.cont1}>
@@ -41,12 +51,24 @@ const SignUp = () => {
             <input type="email" autoComplete='username' placeholder='Email' />
           </div>
           <div className={styles.password}>
-            <input type="password" autoComplete='new-password' placeholder="Password" />
-            <HiOutlineEye className={styles.icon_styling} />
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete='new-password'
+              placeholder="Password"
+            />
+            <HiOutlineEye onClick={toggleShowPassword} className={styles.icon_styling} />
           </div>
           <div className={styles.confirmpassword}>
-            <input type="password" autoComplete='new-password' placeholder="Confirm Password" />
-            <HiOutlineEye className={styles.icon_styling} />
+            <input
+              type={showConfirmPassword ? 'text' : 'password'}
+              value={confirmpassword}
+              onChange={(e) => setConfirmpassword(e.target.value)}
+              autoComplete='new-password'
+              placeholder="Confirm Password"
+            />
+            <HiOutlineEye onClick={toggleShowConfirmPassword} className={styles.icon_styling} />
           </div>
         </div>
         <div className={styles.item3}>
