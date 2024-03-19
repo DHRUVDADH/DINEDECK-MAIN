@@ -9,6 +9,11 @@
   --box-color: #d44045;
   --padding: 400px;
   --round-color: #e5e5e5;
+  --gray-orderbtncolor: #eaeaea;
+  --blue-orderbtncolor: #c6eeff;
+  --green-orderbtncolor: #ccffc8;
+  --yellow-orderbtncolor: #fffcae;
+  --skin-orderbtncolor: #ffe9d0;
 }
 * {
   margin: 0;
@@ -33,4 +38,19 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+}
+.grayorderbtncolor {
+  background-color: var(--gray-orderbtncolor);
+}
+.blueorderbtncolor {
+  background-color: var(--blue-orderbtncolor);
+}
+.greenorderbtncolor {
+  background-color: var(--green-orderbtncolor);
+}
+.yelloworderbtncolor {
+  background-color: var(--yellow-orderbtncolor);
+}
+.skinorderbtncolor {
+  background-color: var(--skin-orderbtncolor);
 }

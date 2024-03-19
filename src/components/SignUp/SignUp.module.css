@@ -127,12 +127,12 @@
   height: 45px;
   width: 135px;
 }
-.mainDiv2 > .cont2 > .item3 > div > div {
+.mainDiv2 > .cont2 > .item3 > div > .Link > div {
   font-size: 16px;
   font-weight: 700;
   border-radius: 35px;
 }
-.mainDiv2 > .cont2 > .item3 > div > .hoverme:hover {
+.mainDiv2 > .cont2 > .item3 > div > .Link >  .hoverme:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }

@@ -1,0 +1,28 @@
+:root {
+  --border-color-order-btn: #bababa;
+}
+
+.orderbtn {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-content: center;
+  border-radius: 12px;
+  border: 2px dashed var(--border-color-order-btn);
+  font-weight: 700;
+}
+.grayorderbtncolor {
+  background-color: var(--gray-orderbtncolor);
+}
+.blueorderbtncolor {
+  background-color: var(--blue-orderbtncolor);
+}
+.greenorderbtncolor {
+  background-color: var(--green-orderbtncolor);
+}
+.yelloworderbtncolor {
+  background-color: var(--yellow-orderbtncolor);
+}
+.skinorderbtncolor {
+  background-color: var(--skin-orderbtncolor);
+}

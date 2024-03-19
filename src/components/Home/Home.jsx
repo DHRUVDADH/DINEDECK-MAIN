@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 import Manager from '../Manager/Manager'
+import Orders from '../Orders/Orders'
 
 
 const Home = () => {
@@ -133,8 +134,8 @@ const Home = () => {
         <div className={styles.encloser6}>
           <Footer></Footer>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 

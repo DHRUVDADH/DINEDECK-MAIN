@@ -72,14 +72,20 @@ const SignUp = () => {
           </div>
         </div>
         <div className={styles.item3}>
-          <div className='but1'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Manager" />
+          <div className={styles.but1}>
+            <Link to="/Manager" className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Manager" />
+            </Link>
           </div>
-          <div className='but2'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Customer" />
+          <div className={styles.but2}>
+            <Link to="/Orders" className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Customer" />
+            </Link>
           </div>
-          <div className='but3'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Chef" />
+          <div className={styles.but3}>
+            <Link className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Chef" />
+            </Link>
           </div>
         </div>
         <div className={styles.item4}>
