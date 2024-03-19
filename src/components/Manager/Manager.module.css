@@ -1,0 +1,116 @@
+:root {
+  --Line-color: #dddddd;
+}
+
+.mainDiv3 {
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 30px;
+}
+.mainDiv3 > .cont1 {
+  height: fit-content;
+  width: calc(100vw - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+}
+.mainDiv3 > .cont1 > .Line {
+  height: 2px;
+  width: 95%;
+  background-color: var(--Line-color);
+}
+.mainDiv3 > .cont1 > .Content {
+  height: fit-content;
+  width: 1220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 65px;
+}
+.mainDiv3 > .cont1 > .Content > .sub1 {
+  height: fit-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 142px);
+  grid-template-rows: repeat(2, 142px);
+  row-gap: 65px;
+  column-gap: 73px;
+}
+.mainDiv3 > .cont1 > .Content > .sub1 > .Buttons {
+  height: 142px;
+  border-radius: 25px;
+  box-shadow: none;
+  border: none;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.mainDiv3 > .cont1 > .Content > .sub1 > .Buttons > .buttonIcon {
+  height: 55px;
+  width: 50px;
+}
+.mainDiv3 > .cont1 > .Content > .sub1 > .Buttons > .buttonIcon > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.mainDiv3 > .cont1 > .Content > .sub1 > .Buttons > .buttonName {
+  font-size: 14px;
+}
+
+.mainDiv3 > .cont1 > .Content > .sub2 {
+  height: 220px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 142px);
+  grid-template-rows: 30px 142px;
+  column-gap: 73px;
+  row-gap: 42px;
+}
+.mainDiv3 > .cont1 > .Content > .sub2 > .item1 {
+  height: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+.mainDiv3 > .cont1 > .Content > .sub2 > .Buttons {
+  height: 142px;
+  border-radius: 25px;
+  box-shadow: none;
+  border: none;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.mainDiv3 > .cont1 > .Content > .sub2 > .Buttons > .buttonIcon {
+  height: 55px;
+  width: 50px;
+}
+.mainDiv3 > .cont1 > .Content > .sub2 > .Buttons > .buttonIcon > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.mainDiv3 > .cont1 > .Content > .sub2 > .Buttons > .buttonName {
+  font-size: 14px;
+}

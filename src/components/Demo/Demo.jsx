@@ -10,7 +10,6 @@ const Demo = () => {
   const [city, setCity] = useState("baroda")
   const [outlet, setOutlet] = useState("Outlet")
 
-  console.log(`${name} ${email} ${phone} ${restname} ${city} ${outlet} `)
   const onSubmit = (event) => {
     event.preventDefault();
 
@@ -20,14 +19,13 @@ const Demo = () => {
     setRestname(event.target[3].value);
     setCity(event.target[4].value);
     setOutlet(event.target[5].value);
-    console.log(`${name} ${email} ${phone} ${restname} ${city} ${outlet} `)
 
   }
 
   return (
     <form onSubmit={onSubmit} className={styles.home_screen4}>
       <div className={styles.cont1}>
-        <div className={styles.item1}>Schedule a free demo</div>
+        <div className={styles.item1}>Schedule a free trial</div>
         <div className={styles.item2}>Get in touch with our teamto clarify your queries</div>
       </div>
       <div className={styles.cont2}>

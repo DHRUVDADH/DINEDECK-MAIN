@@ -3,30 +3,59 @@ import styles from './SignUp.module.css'
 import Button from '../Button/Button'
 import { HiOutlineEye } from "react-icons/hi2";
 // import { signUp } from '../../services/operations/authAPI';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { apiConnector } from '../../services/apiconnector';
 
-const submitHandler =async (e)=>
-{
-  e.preventDefault();
-  try{
-    const email = "dscdsf"
-    const firstname="dafdf"
-   const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{email , firstname})
-   console.log(response)
-  }catch(err){
-    console.log(err.msg)
-  }
-}
 const SignUp = () => {
-  return ( 
-    
-    <form onSubmit={submitHandler}>
 
+
+const [firstname, setFirstname] = useState("abc@gmail.com");
+  const [lastname, setLastname] = useState("abc@123");
+  const [email, setEmail] = useState("abc@123");
+  const [password, setPassword] = useState("abc@123");
+  const [confirmpassword, setConfirmpassword] = useState("abc@123");
+
+  console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
+
+  const onSubmit = async (event) => {
+
+    event.preventDefault();
+    setFirstname(event.target[0].value);
+    setLastname(event.target[1].value);
+    setEmail(event.target[2].value);
+    setPassword(event.target[3].value);
+    setConfirmpassword(event.target[4].value);
+    
+
+    try{
+   
+      const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/signup",{firstname,lastname,email,password,confirmpassword,})
+      console.log(response)
+     }catch(err){
+       console.log(err.msg)
+     }
+
+
+  }
+
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const toggleShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
+  return ( 
     <div className={styles.mainDiv2}>
       <div className={styles.cont1}>
         <img src="/Assets/signup-page-1.png" alt="" />
       </div>
-      <div className={styles.cont2}>
+      <form onSubmit={onSubmit} className={styles.cont2}>
         <div className={styles.item1}>Sign Up</div>
         <div className={styles.item2}>
           <div className={styles.firstname}>
@@ -36,30 +65,48 @@ const SignUp = () => {
             <input type="text" placeholder='Last Name' />
           </div>
           <div className={styles.email}>
-            <input type="email" placeholder='Email'  />
+            <input type="email" autoComplete='username' placeholder='Email' />
           </div>
           <div className={styles.password}>
-            <input type="password" placeholder="Password" />
-            <HiOutlineEye className={styles.icon_styling} />
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete='new-password'
+              placeholder="Password"
+            />
+            <HiOutlineEye onClick={toggleShowPassword} className={styles.icon_styling} />
           </div>
           <div className={styles.confirmpassword}>
-            <input type="password" placeholder="Confirm Password" />
-            <HiOutlineEye className={styles.icon_styling} />
+            <input
+              type={showConfirmPassword ? 'text' : 'password'}
+              value={confirmpassword}
+              onChange={(e) => setConfirmpassword(e.target.value)}
+              autoComplete='new-password'
+              placeholder="Confirm Password"
+            />
+            <HiOutlineEye onClick={toggleShowConfirmPassword} className={styles.icon_styling} />
           </div>
         </div>
         <div className={styles.item3}>
-          <div className='but1'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Manager" />
+          <div className={styles.but1}>
+            <Link to="/Manager" className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Manager" />
+            </Link>
           </div>
-          <div className='but2'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Customer" />
+          <div className={styles.but2}>
+            <Link to="/Orders" className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Customer" />
+            </Link>
           </div>
-          <div className='but3'>
-            <Button className="redhoverme" isColor="white" isShape="oval" content="Chef" />
+          <div className={styles.but3}>
+            <Link className={styles.Link}>
+              <Button className="redhoverme" isColor="white" isShape="oval" content="Chef" />
+            </Link>
           </div>
         </div>
         <div className={styles.item4}>
-          <Button isColor="red" isShape="oval" content="Sign Up" type="submit"/>
+          <Button type='submit' isColor="red" isShape="oval" content="Sign Up" />
         </div>
         <div className={styles.item5}>
           <div className={styles.line}></div>
@@ -78,13 +125,12 @@ const SignUp = () => {
         </div>
         <div className={styles.item7}>
           <div className={styles.already}>Already have an account?</div>
-          <div className={styles.login} >Log In</div>
+          <Link className={styles.Link} to="/Login"><button className={`${styles.login} pointer_cursor`}>Log In</button></Link>
         </div>
 
-      </div>
-    </div >
-    </form>
+      </form>
+    </div>
   )
 }
 
-export default SignUp
+export default SignUp;

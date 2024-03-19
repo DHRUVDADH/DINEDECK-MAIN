@@ -2,8 +2,8 @@ import React from 'react'
 import styles from "./HomePageComponent.module.css"
 
 const HomePageComponent = ({ myProp }) => {
-
   const { keys, spanElement, spanBefore, spanAfter, description } = myProp;
+
   return (
     myProp.map((obj, keys) => (
       <div key={keys} className={styles.mainDiv1}>
