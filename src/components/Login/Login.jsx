@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("dhruv@gmail.com");
-  const [password, setPassword] = useState("dhruv@123");
+  const [password, setPassword] = useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ const Login = () => {
         </form>
 
         <div className={styles.item3}>
-          <div className={styles.forgot}>Forgot password?</div>
+          <Link to="/ResetPassword" className={styles.forgot}>Forgot password?</Link>
           <div className={styles.or}>
             <div className={styles.line}></div>
             <div className={styles.text}>Or Log In with</div>

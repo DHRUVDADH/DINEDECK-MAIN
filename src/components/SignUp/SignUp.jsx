@@ -9,8 +9,8 @@ const SignUp = () => {
   const [firstname, setFirstname] = useState("abc@gmail.com");
   const [lastname, setLastname] = useState("abc@123");
   const [email, setEmail] = useState("abc@123");
-  const [password, setPassword] = useState("abc@123");
-  const [confirmpassword, setConfirmpassword] = useState("abc@123");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmpassword] = useState("");
 
   console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
   const onSubmit = (event) => {
