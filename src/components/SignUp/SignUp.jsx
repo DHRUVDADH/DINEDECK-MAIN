@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SignUp.module.css";
 import Button from "../Button/Button";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import { HiOutlineEye } from "react-icons/hi2";
@@ -27,35 +27,39 @@ const SignUp = () => {
     setEmail(event.target[2].value);
     setPassword(event.target[3].value);
     setConfirmpassword(event.target[4].value);
-    
-    if(password !== confirmpassword) {toast.error("Passwords do not match");  return ; }
+
+    if (password !== confirmpassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+   
 
     const accountType = "Customer";
-    try { 
-
+    try {
       const response = await apiConnector(
         "POST",
         "http://localhost:3000/api/v1/auth/signup",
         { firstname, lastname, email, password, confirmpassword, accountType }
       );
       console.log(response);
-      if(response.data.success)
-      {
+      if (response.data.success) {
         toast.success("signup successfully");
-        navigate('/login');
-        
+        navigate("/login");
       }
-      event.target[0].value="";
-      event.target[1].value="";
-      event.target[2].value="";
-      event.target[3].value="";
-      event.target[4].value="";
+      else
+      {
+        toast.error(response.data.message);
+      }
+      event.target[0].value = "";
+      event.target[1].value = "";
+      event.target[2].value = "";
+      event.target[3].value = "";
+      event.target[4].value = "";
     } catch (err) {
       console.log(err.msg);
     }
-    
   };
-  
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 

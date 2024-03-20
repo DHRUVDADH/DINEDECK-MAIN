@@ -6,26 +6,18 @@ require("dotenv").config();
 const signUp = async (req, res) => {
     try{
         const{firstname,lastname,email,password,confirmpassword,accountType} = req.body;                                   
-        // console.log(accountType)
+        // console.log(accountType)    
     
         if(!firstname || !lastname || !email || !password || !confirmpassword ){                //validate krlo means all inbox are filled or not;
             
-                return res.status(403).json({
+                return res.json({
                     success:false,
                     message:"All fields are required",
                 })
            }
-
-        if(password !== confirmpassword){                                            //both password must be matched 
-            return res.status(400).json({
-                success:false,
-                message:'Password and ConfirmPassword Value does not match, please try again',
-            });
-        }
-
         const existingUser = await User.findOne({email});                   //check user already exist or not
         if(existingUser){
-            return res.status(400).json({
+            return res.json({
                 success:false,
                 message:'User is already registered',
             });
@@ -51,8 +43,8 @@ const signUp = async (req, res) => {
             // additionalDetails:profileDetails._id,
           
         })
-        console.log('submiteed');
-        return res.status(200).json({                      //return res
+        // console.log('submiteed');
+        return res.json({                      //return res
             success:true,
             user,
             message:'User is registered Successfully',
@@ -60,7 +52,7 @@ const signUp = async (req, res) => {
     }
     catch(error) {
         console.log(error);
-        return res.status(500).json({
+        return res.json({
             success:false,
             message:"User cannot be registrered. Please try again",
         })
@@ -74,7 +66,7 @@ const login = async (req, res) => {
         const {email, password} = req.body;                  //get data from req body
       
         if(!email || !password){                             // validate krlo means all inbox are filled or not;
-            return res.status(403). json({
+            return res. json({
                 success:false,
                 message:'Please Fill up All the Required Fields',
             });
@@ -82,8 +74,8 @@ const login = async (req, res) => {
         
         const user = await User.findOne({email});          //user check exist or not
         if(!user){
-            console.log('not registertd');
-            return res.status(401).json({
+            // console.log('not registertd');
+            return res.json({
                 success:false,
                 message:"User is not registrered, please signup first",
             });
@@ -105,17 +97,17 @@ const login = async (req, res) => {
                 expires: new Date(Date.now() + 3*24*60*60*1000),
                 httpOnly:true,
             }
-            res.cookie("token", token, options).status(200).json({
+            res.cookie("token", token, options).json({
                 success:true,
                 token,
                 user,
                 message:'Logged in successfully',
             })
-            console.log('loging ok');
+            // console.log('loging ok');
       }
         else {
-            console.log('wrong password');
-            return res.status(401).json({
+            // console.log('wrong password');
+            return res.json({
                 success:false,
                 message:'Password is incorrect',
             });
@@ -123,7 +115,7 @@ const login = async (req, res) => {
     }
     catch(error) {
         console.log(error);
-        return res.status(500).json({
+        return res.json({
             success:false,
             message:'Login Failure, please try again',
         });

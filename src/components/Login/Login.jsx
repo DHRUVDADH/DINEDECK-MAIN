@@ -28,7 +28,10 @@ const Login = () => {
       {
         toast.success("login successfully");
         navigate('/Manager');
-        
+      }
+      else
+      {
+        toast.error(response.data.message);
       }
      }catch(err){
        console.log(err.msg)
