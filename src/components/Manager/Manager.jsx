@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import styles from "./Manager.module.css";
 import Navbar2 from "../Navbar2/Navbar2";
-import { useEffect } from "react";
 import { apiConnector } from "../../services/apiconnector";
 
+
+async function find(setLoading){
+  setLoading(true);
+  try{
+    const response = await apiConnector(
+      "get",
+      "http://localhost:3000/api/v1/auth/Manager"
+    );
+    console.log(response);
+  }catch(err){
+    console.log(err)
+  }
+  setLoading(false);
+}
 const Manager = () => {
-  useEffect(async () => {
-    try {
-      const response = await apiConnector(
-        "get",
-        "http://localhost:3000/api/v1/auth/Manager"
-      );
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+ const [loading , setLoading] = useState(false);
+ 
+ useState(()=>{
+  find(setLoading);
+ },[])
 
   return (
-    <div className={styles.mainDiv3}>
+    <>  {
+    loading ? (<h1> Loading...</h1>) : (
+
+        
+<div className={styles.mainDiv3}>
       <Navbar2></Navbar2>
       <div className={styles.cont1}>
         <div className={styles.Line}></div>
@@ -100,6 +111,11 @@ const Manager = () => {
         </div>
       </div>
     </div>
+
+    )
+  }
+  </>
+
   );
 };
 

@@ -7,7 +7,7 @@ exports.isLoggedin = async (req, res, next) => {
     
     const token =  req.cookies.token || req.header("Authorization").replace("Bearer ","") || req.body.token  ; 
     
-    console.log(token); 
+    // console.log(token); 
     if (!token) {
       return res.json({
         success: false,
