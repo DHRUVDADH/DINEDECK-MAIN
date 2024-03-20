@@ -1,49 +1,57 @@
-import React, { useState } from 'react'
-import styles from './Login.module.css'
-import Button from '../Button/Button'
+import React, { useState } from "react";
+import styles from "./Login.module.css";
+import Button from "../Button/Button";
 import { HiOutlineEye } from "react-icons/hi2";
-import Navbar from '../Navbar/Navbar';
-import { apiConnector } from '../../services/apiconnector';
-import { Link } from 'react-router-dom';
-import { toast } from "react-toastify"
+import Navbar from "../Navbar/Navbar";
+import { apiConnector } from "../../services/apiconnector";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = formData;
+
+  function handleOnChange(e) {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+    console.log(formData);
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    setEmail(event.target[0].value);
-    setPassword(event.target[1].value);
-
-    try{
-      const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/login",{email,password})
-      console.log(response)
-      if(response.data.success)
-      {
+    try {
+      const response = await apiConnector(
+        "POST",
+        "http://localhost:3000/api/v1/auth/login",
+        { email, password }
+      );
+      console.log(response);
+      if (response.data.success) {
         toast.success(`welcome,${response.data.user.firstname}`);
-        navigate('/Manager');
-      }
-      else
-      {
+        navigate("/Manager");
+      } else {
         toast.error(response.data.message);
       }
-     }catch(err){
-       console.log(err.msg)
-     }
-  }
+    } catch (err) {
+      console.log(err.msg);
+    }
+  };
 
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
 
   return (
     <div className={styles.mainDiv1}>
@@ -54,25 +62,42 @@ const Login = () => {
         <div className={styles.item1}>Log In</div>
         <form onSubmit={onSubmit} className={styles.item2}>
           <div className={styles.email}>
-            <input type="email" autoComplete='username' placeholder='Email' />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={handleOnChange}
+              name="email"
+            />
           </div>
           <div className={styles.password}>
             <input
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete='current-password'
+              onChange={handleOnChange}
+              name="password"
+              autoComplete="current-password"
               placeholder="Password"
             />
-            <HiOutlineEye onClick={toggleShowPassword} className={styles.icon_styling} />
+            <HiOutlineEye
+              onClick={toggleShowPassword}
+              className={styles.icon_styling}
+            />
           </div>
           <div className={styles.submitbtn}>
-            <Button type='submit' isColor="red" isShape="oval" content="Log In" />
+            <Button
+              type="submit"
+              isColor="red"
+              isShape="oval"
+              content="Log In"
+            />
           </div>
         </form>
 
         <div className={styles.item3}>
-          <div className={styles.forgot}>Forgot password?</div>
+          <Link to="/ResetPassword" className={styles.forgot}>
+            Forgot password?
+          </Link>
           <div className={styles.or}>
             <div className={styles.line}></div>
             <div className={styles.text}>Or Log In with</div>
@@ -80,22 +105,35 @@ const Login = () => {
         </div>
         <div className={styles.item4}>
           <div className={styles.but1}>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/google-logo.png"
+              alt="google-logo"
+            />
             <div>Google</div>
           </div>
           <div className={styles.but2}>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/facebook-new.png"
+              alt="facebook-new"
+            />
             <div>Facebook</div>
           </div>
         </div>
         <div className={styles.item5}>
           <div className={styles.dont}>Don't have an account?</div>
-          <Link className={styles.Link} to="/SignUp"><button className={`${styles.signup} pointer_cursor`}>Sign Up</button></Link>
+          <Link className={styles.Link} to="/SignUp">
+            <button className={`${styles.signup} pointer_cursor`}>
+              Sign Up
+            </button>
+          </Link>
         </div>
-
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default Login
+export default Login;

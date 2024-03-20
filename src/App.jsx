@@ -7,6 +7,9 @@ import Login from "./components/Login/Login"
 import SignUp from "./components/SignUp/SignUp"
 import Manager from "./components/Manager/Manager"
 import Orders from "./components/Orders/Orders"
+import OrderDeck from "./components/OrderDeck/OrderDeck"
+import ResetPassword from "./components/ResetPassword/ResetPassword"
+import CheckEmail from "./components/CheckEmail/CheckEmail"
 
 
 function App() {
@@ -18,8 +21,11 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Manager" element={<Manager />} />
         <Route path="/Orders" element={<Orders />} />
-      </Routes>
-    </div>
+        <Route path="/OrderDeck" element={<OrderDeck />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/CheckEmail" element={<CheckEmail />} />
+      </Routes >
+    </div >
   )
 }
 

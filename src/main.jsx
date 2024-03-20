@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -11,8 +11,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <App />
       <ToastContainer
         position="top-right"
-        autoClose={1002}
-        hideProgressBar={true}
+        autoClose={1500}
+        hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         draggable
         pauseOnHover
         theme="dark"
-        transition:Bounce
+        transition={Slide}
       />
     </BrowserRouter>
   </React.StrictMode>

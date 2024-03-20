@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Orders.module.css'
 import OrderButton from '../OrderButton/OrderButton'
 import Navbar2 from '../Navbar2/Navbar2'
+import { Link } from 'react-router-dom'
 
 const Orders = () => {
   return (
@@ -36,7 +37,9 @@ const Orders = () => {
             <div className={styles.item1}>
               <div className={styles.text}>Hall name 1</div>
               <div className={styles.orderdiv}>
-                <OrderButton number="1" type="gray"></OrderButton>
+                <Link to="/OrderDeck" className={styles.Link}>
+                  <OrderButton number="1" type="gray"></OrderButton>
+                </Link>
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="skin"></OrderButton>

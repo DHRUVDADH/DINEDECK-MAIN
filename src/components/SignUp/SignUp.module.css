@@ -127,12 +127,17 @@
   height: 45px;
   width: 135px;
 }
-.mainDiv2 > .cont2 > .item3 > div > .Link > div {
+.mainDiv2 > .cont2 > .item3 > div > .Link > button {
   font-size: 16px;
   font-weight: 700;
   border-radius: 35px;
 }
-.mainDiv2 > .cont2 > .item3 > div > .Link >  .hoverme:hover {
+.mainDiv2 > .cont2 > .item3 > div > .Link > button:focus {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.mainDiv2 > .cont2 > .item3 > div > .Link > .hoverme:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
@@ -243,4 +248,8 @@ img {
   align-items: flex-end;
   box-shadow: none;
   border: none;
+}
+.changeButton {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
