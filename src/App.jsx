@@ -7,6 +7,7 @@ import Login from "./components/Login/Login"
 import SignUp from "./components/SignUp/SignUp"
 import Manager from "./components/Manager/Manager"
 import Orders from "./components/Orders/Orders"
+import { toast } from "react-toastify/dist/types"
 
 function App() {
   return (

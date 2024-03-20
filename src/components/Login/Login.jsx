@@ -5,9 +5,13 @@ import { HiOutlineEye } from "react-icons/hi2";
 import Navbar from '../Navbar/Navbar';
 import { apiConnector } from '../../services/apiconnector';
 import { Link } from 'react-router-dom';
+import { toast } from "react-toastify"
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("dhruv@gmail.com");
   const [password, setPassword] = useState("dhruv@123");
 
@@ -20,6 +24,12 @@ const Login = () => {
     try{
       const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/login",{email,password})
       console.log(response)
+      if(response.data.success)
+      {
+        toast.success("login successfully");
+        navigate('/Manager');
+        
+      }
      }catch(err){
        console.log(err.msg)
      }
