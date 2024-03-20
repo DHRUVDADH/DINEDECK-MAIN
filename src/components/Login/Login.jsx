@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("dhruv@gmail.com");
-  const [password, setPassword] = useState("dhruv@123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
       console.log(response)
       if(response.data.success)
       {
-        toast.success("login successfully");
+        toast.success(`welcome,${response.data.user.firstname}`);
         navigate('/Manager');
       }
       else
