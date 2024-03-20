@@ -11,30 +11,39 @@ import { useState } from "react";
 import { apiConnector } from "../../services/apiconnector";
 
 const SignUp = () => {
+
   const navigate = useNavigate();
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
 
-  // console.log(`${firstname} ${lastname} ${email} ${password} ${confirmpassword} `)
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmpassword: "",
+  });
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setFirstname(event.target[0].value);
-    setLastname(event.target[1].value);
-    setEmail(event.target[2].value);
-    setPassword(event.target[3].value);
-    setConfirmpassword(event.target[4].value);
+  const [accountType, setAccountType] = useState('Customer');
+  const { firstname, lastname, email, password, confirmpassword } = formData;
+
+  function handleOnChange(e) {
+    setFormData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }))
+    console.log(formData);
+  }
+
+
+  const onSubmit = async (e) => {
+
+    e.preventDefault();
+    console.log("Data Submitted");
+    console.log(formData)
+
+    const { firstname, lastname, email, password, confirmpassword } = formData;
 
     if (password !== confirmpassword) {
       toast.error("Passwords do not match");
       return;
     }
-   
 
-    const accountType = "Customer";
     try {
       const response = await apiConnector(
         "POST",
@@ -42,19 +51,14 @@ const SignUp = () => {
         { firstname, lastname, email, password, confirmpassword, accountType }
       );
       console.log(response);
+
       if (response.data.success) {
         toast.success("signup successfully");
         navigate("/login");
       }
-      else
-      {
+      else {
         toast.error(response.data.message);
       }
-      event.target[0].value = "";
-      event.target[1].value = "";
-      event.target[2].value = "";
-      event.target[3].value = "";
-      event.target[4].value = "";
     } catch (err) {
       console.log(err.msg);
     }
@@ -79,21 +83,25 @@ const SignUp = () => {
         <div className={styles.item1}>Sign Up</div>
         <div className={styles.item2}>
           <div className={styles.firstname}>
-            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="First Name" id="fname" value={firstname}
+              onChange={handleOnChange} name='firstname' />
           </div>
           <div className={styles.lastname}>
-            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder="Last Name" id="lname" value={lastname}
+              onChange={handleOnChange} name='lastname' />
           </div>
           <div className={styles.email}>
-            <input type="email" autoComplete="username" placeholder="Email" />
+            <input type="email" autoComplete="username" placeholder="Email" id="email" value={email}
+              onChange={handleOnChange} name='email' />
           </div>
           <div className={styles.password}>
             <input
               type={showPassword ? "text" : "password"}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="new-password"
+              onChange={handleOnChange}
+              name='password'
               placeholder="Password"
+              id="password"
             />
             <HiOutlineEye
               onClick={toggleShowPassword}
@@ -103,10 +111,11 @@ const SignUp = () => {
           <div className={styles.confirmpassword}>
             <input
               type={showConfirmPassword ? "text" : "password"}
+              name='confirmpassword'
               value={confirmpassword}
-              onChange={(e) => setConfirmpassword(e.target.value)}
-              autoComplete="new-password"
+              onChange={handleOnChange}
               placeholder="Confirm Password"
+              id="confirmPassword"
             />
             <HiOutlineEye
               onClick={toggleShowConfirmPassword}

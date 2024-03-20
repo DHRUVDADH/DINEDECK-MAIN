@@ -12,14 +12,22 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("dhruv@gmail.com");
-  const [password, setPassword] = useState("dhruv@123");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password} = formData;
+
+  function handleOnChange(e) {
+    setFormData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }))
+    console.log(formData);
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    setEmail(event.target[0].value);
-    setPassword(event.target[1].value);
+    
 
     try{
       const response = await apiConnector("POST","http://localhost:3000/api/v1/auth/login",{email,password})
@@ -54,13 +62,14 @@ const Login = () => {
         <div className={styles.item1}>Log In</div>
         <form onSubmit={onSubmit} className={styles.item2}>
           <div className={styles.email}>
-            <input type="email" autoComplete='username' placeholder='Email' />
+            <input type="email" placeholder='Email' value={email}
+              onChange={handleOnChange} name='email' />
           </div>
           <div className={styles.password}>
             <input
               type={showPassword ? 'text' : 'password'}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handleOnChange} name='password'
               autoComplete='current-password'
               placeholder="Password"
             />
