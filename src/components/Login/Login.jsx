@@ -38,7 +38,8 @@ const Login = () => {
       console.log(response);
       if (response.data.success) {
         toast.success(`welcome,${response.data.user.firstname}`);
-        navigate("/Manager");
+        navigate(`/${response.data.user.accountType}`);
+        
       } else {
         toast.error(response.data.message);
       }

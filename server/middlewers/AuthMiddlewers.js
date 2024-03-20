@@ -4,18 +4,10 @@ require("dotenv").config();
 
 exports.isLoggedin = async (req, res, next) => {
   try {
-   
-    // if (req.body.token) {
-    //   token = req.body.token;
-    // } else if (req.cookies.token) {
-    //   token = req.cookies.token;
-    // } else if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
-    //   token = req.headers.authorization.replace("Bearer ", "");
-    // }
-
-    const token =  req.body.token || req.cookies.token || req.header("Authorization").replace("Bearer ",""); 
     
-    console.log("token"); 
+    const token =  req.cookies.token || req.header("Authorization").replace("Bearer ","") || req.body.token  ; 
+    
+    console.log(token); 
     if (!token) {
       return res.json({
         success: false,
