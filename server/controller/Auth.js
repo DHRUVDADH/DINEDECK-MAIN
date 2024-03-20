@@ -95,7 +95,7 @@ const login = async (req, res) => {
 
             const options = {                                               //create cookie and send response
                 expires: new Date(Date.now() + 3*24*60*60*1000),
-                httpOnly:true,
+                httpOnly:false,
             }
             res.cookie("token", token, options).json({
                 success:true,
