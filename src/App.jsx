@@ -27,8 +27,8 @@ function App() {
         <Route path="/CheckEmail" element={<CheckEmail />} />
 =======
 >>>>>>> f952f68b760b728c07badafdde37e907373f4a9e
-      </Routes>
-    </div>
+      </Routes >
+    </div >
   )
 }
 
