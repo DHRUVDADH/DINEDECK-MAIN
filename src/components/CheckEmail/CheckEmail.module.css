@@ -1,0 +1,70 @@
+:root {
+  --text-resetpassword-color: #969ab8;
+}
+.mainDiv7 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainDiv7 > .content {
+  height: 490px;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.mainDiv7 > .content > .cont1 {
+  height: 490px;
+  width: 490px;
+}
+.mainDiv7 > .content > .cont1 > img {
+  width: fit-content;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.mainDiv7 > .content > .cont2 {
+  height: 490px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.mainDiv7 > .content > .cont2 > .item1 {
+  height: 60px;
+  width: 100%;
+  font-size: 46px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainDiv7 > .content > .cont2 > .item2 {
+  height: 50px;
+  width: 100%;
+  /* font-size: 44px; */
+  /* font-weight: 700; */
+  text-align: center;
+}
+
+.mainDiv7 > .content > .cont2 > .item3 {
+  height: 50px;
+  width: 200px;
+}
+.mainDiv7 > .content > .cont2 > .item4 {
+  width: fit-content;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30px;
+  color: var(--text-resetpassword-color);
+}
+.mainDiv7 > .content > .cont2 > .item4 > div {
+  font-size: 18px;
+}

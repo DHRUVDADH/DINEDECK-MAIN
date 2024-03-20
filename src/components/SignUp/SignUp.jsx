@@ -11,7 +11,6 @@ import { useState } from "react";
 import { apiConnector } from "../../services/apiconnector";
 
 const SignUp = () => {
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
