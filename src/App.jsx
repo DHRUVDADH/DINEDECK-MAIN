@@ -21,12 +21,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Manager" element={<Manager />} />
         <Route path="/Orders" element={<Orders />} />
-<<<<<<< HEAD
         <Route path="/OrderDeck" element={<OrderDeck />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/CheckEmail" element={<CheckEmail />} />
-=======
->>>>>>> f952f68b760b728c07badafdde37e907373f4a9e
       </Routes >
     </div >
   )

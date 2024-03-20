@@ -11,16 +11,13 @@ import { useState } from "react";
 import { apiConnector } from "../../services/apiconnector";
 
 const SignUp = () => {
-<<<<<<< HEAD
-  const [firstname, setFirstname] = useState("abc@gmail.com");
-  const [lastname, setLastname] = useState("abc@123");
-  const [email, setEmail] = useState("abc@123");
-=======
+  // const [firstname, setFirstname] = useState("abc@gmail.com");
+  // const [lastname, setLastname] = useState("abc@123");
+  // const [email, setEmail] = useState("abc@123");
   const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
->>>>>>> f952f68b760b728c07badafdde37e907373f4a9e
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
 
@@ -38,7 +35,7 @@ const SignUp = () => {
       toast.error("Passwords do not match");
       return;
     }
-   
+
 
     const accountType = "Customer";
     try {
@@ -52,8 +49,7 @@ const SignUp = () => {
         toast.success("signup successfully");
         navigate("/login");
       }
-      else
-      {
+      else {
         toast.error(response.data.message);
       }
       event.target[0].value = "";
