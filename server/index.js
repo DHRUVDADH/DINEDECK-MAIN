@@ -5,7 +5,12 @@ const router = require('./routes/routes')
 require("dotenv").config();
 const PORT = process.env.PORT || 4000 ;
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        credentials: true,
+        origin: "*",
+    })
+);
 
 const dbConnect = require("./config/database");
 dbConnect();
