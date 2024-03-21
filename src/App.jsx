@@ -10,7 +10,8 @@ import Orders from "./components/Orders/Orders"
 import OrderDeck from "./components/OrderDeck/OrderDeck"
 import ResetPassword from "./components/ResetPassword/ResetPassword"
 import CheckEmail from "./components/CheckEmail/CheckEmail"
-
+import Settings from "./components/Settings/Settings"
+import UserInfo from "./components/UserInfo/UserInfo"
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/OrderDeck" element={<OrderDeck />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
         <Route path="/CheckEmail" element={<CheckEmail />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/UserInfo" element={<UserInfo />} />
       </Routes >
     </div >
   )

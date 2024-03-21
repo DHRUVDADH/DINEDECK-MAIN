@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './Navbar.module.css'
 import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
 import '../../App.css'
 
 const Navbar = () => {
+
+  const divRef = useRef(document.getElementById("DemoNavbar"));
+  const scrollToDiv = () => {
+    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+
+
   return (
     <div className={styles.navigation1}>
       <div className={`${styles.cont1} pointer_cursor`}>
         <img src={'/Assets/logo.png'} alt="logo" />
       </div>
       <div className={styles.cont2}>
-        <div className="pointer_cursor"> 
+        <div className="pointer_cursor">
           Features
           {/* <ul>
             <li>
@@ -29,8 +37,8 @@ const Navbar = () => {
           </ul> */}
         </div>
         <div className="pointer_cursor">Outlet Types</div>
-        <div className="pointer_cursor">Resource</div>
-        <div className="pointer_cursor" >Demo</div>
+        <Link to='/UserInfo' className="pointer_cursor">Resource</Link>
+        <Link to='/Settings' id="DemoNavbar" className="pointer_cursor" >Demo</Link>
       </div>
       <div className={styles.cont3}>
         <div>

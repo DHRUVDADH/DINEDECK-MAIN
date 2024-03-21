@@ -1,0 +1,156 @@
+/* .mainDiv3 > .contUserInfo1 > .Line {
+  height: 2px;
+  width: 95%;
+  background-color: var(--Line-color);
+} */
+.contUserInfo {
+  height: fit-content;
+  width: 98vw;
+  display: grid;
+  place-content: center;
+}
+.contUserInfo > .mainDiv9 {
+  height: fit-content;
+  width: 1380px;
+  /* margin: 20px 0px; */
+  padding: 45px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.contUserInfo > .mainDiv9 > .Navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 455px;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 {
+  height: 100%;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub1 {
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+  display: grid;
+  place-content: center;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 {
+  height: 100%;
+  width: 90px;
+  overflow-y: hidden;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(150%);
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item2 {
+  height: 100;
+  width: fit-content;
+  font-size: 38px;
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+}
+.contUserInfo > .mainDiv9 > .Settings {
+  height: fit-content;
+  width: 1380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Line {
+  height: 2.5px;
+  width: 100%;
+  background-color: var(--Line-color);
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content {
+  width: 400px;
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 {
+  height: 180px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 {
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 > img {
+  height: 100%;
+  width: 100%;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input {
+  height: 80px;
+  width: 315px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.contUserInfo
+  > .mainDiv9
+  > .Settings
+  > .Content
+  > .item2
+  > .input
+  > .inputname {
+  font-size: 12px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input > input {
+  height: 45px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  box-shadow: none;
+  background-color: var(--white-color);
+  padding: 20px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .submitbtn {
+  height: 50px;
+  margin-top: 40px;
+  width: 200px;
+}
+.contUserInfo
+  > .mainDiv9
+  > .Settings
+  > .Content
+  > .item2
+  > .submitbtn
+  > button {
+  letter-spacing: 0.48px;
+}

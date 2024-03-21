@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '../Button/Button'
 import styles from './Home.module.css'
-import Navbar from '../Navbar/Navbar'
 import HomePageComponent from '../HomePageComponent/HomePageComponent'
 import Demo from '../Demo/Demo'
 import Footer from '../Footer/Footer'
@@ -9,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 import Manager from '../Manager/Manager'
 import Orders from '../Orders/Orders'
+import Navbar from '../Navbar/Navbar'
 
 
 const Home = () => {
