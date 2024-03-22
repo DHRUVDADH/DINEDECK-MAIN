@@ -69,6 +69,7 @@ const Login = () => {
               value={email}
               onChange={handleOnChange}
               name="email"
+              autoComplete="username"
             />
           </div>
           <div className={styles.password}>

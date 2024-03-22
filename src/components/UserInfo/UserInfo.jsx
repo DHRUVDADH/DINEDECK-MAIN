@@ -14,7 +14,7 @@ const UserInfo = () => {
               <img src="/Assets/logo.png" alt="" />
             </div>
           </div>
-          <div className={styles.item2}>Settings</div>
+          <div className={styles.item2}>User Information</div>
         </div>
         <div className={styles.Settings}>
           <div className={styles.Line}></div>

@@ -20,6 +20,16 @@
   display: grid;
   place-content: center;
 }
+.navigation2 > .cont1 > .sub1 > #cross {
+  visibility: hidden;
+}
+.navigation2 > .cont1 > .sub1 > #cross,
+.navigation2 > .cont1 > .sub1 > #bars {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .navigation2 > .cont1 > .sub2 {
   height: 100%;
   width: 90px;
@@ -94,4 +104,38 @@
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
+}
+
+.NavbarToggle {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  height: 750px;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavbarToggle > .ulToggle {
+  height: 200px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavbarToggle > .ulToggle > .liToggle {
+  height: 50px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--Line-color);
+}
+.NavbarToggle > .ulToggle > .liToggle > .liTextToggle {
+  font-size: 20px;
+  height: fit-content;
+  width: 100px;
+  font-weight: 700;
 }

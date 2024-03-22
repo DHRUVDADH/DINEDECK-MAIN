@@ -4,13 +4,19 @@ import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
 import '../../App.css'
 
-const Navbar = () => {
+const Navbar = ({ parentRef }) => {
 
-  const divRef = useRef(document.getElementById("DemoNavbar"));
-  const scrollToDiv = () => {
-    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  // const id = document.getElementById("DemoNavbar");
+  // const childFunction = () => {
+  //   scrollToDiv(id);
+  // };
+
+  const scrollToTarget = () => {
+    parentRef.current.querySelector('#DemoScroll').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   };
-
 
 
   return (
@@ -37,8 +43,8 @@ const Navbar = () => {
           </ul> */}
         </div>
         <div className="pointer_cursor">Outlet Types</div>
-        <Link to='/UserInfo' className="pointer_cursor">Resource</Link>
-        <Link to='/Settings' id="DemoNavbar" className="pointer_cursor" >Demo</Link>
+        <div to='/UserInfo' className="pointer_cursor">Resource</div>
+        <div onClick={scrollToTarget} id="DemoNavbar" className="pointer_cursor" >Try</div>
       </div>
       <div className={styles.cont3}>
         <div>

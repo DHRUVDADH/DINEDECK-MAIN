@@ -1,15 +1,15 @@
-/* .mainDiv3 > .contUserInfo1 > .Line {
+/* .mainDiv3 > .contSettings1 > .Line {
   height: 2px;
   width: 95%;
   background-color: var(--Line-color);
 } */
-.contUserInfo {
+.contSettings {
   height: fit-content;
   width: 98vw;
   display: grid;
   place-content: center;
 }
-.contUserInfo > .mainDiv9 {
+.contSettings > .mainDiv8 {
   height: fit-content;
   width: 1380px;
   /* margin: 20px 0px; */
@@ -20,7 +20,7 @@
   justify-content: center;
   gap: 40px;
 }
-.contUserInfo > .mainDiv9 > .Navbar {
+.contSettings > .mainDiv8 > .Navbar {
   height: 60px;
   width: 100%;
   display: flex;
@@ -28,32 +28,31 @@
   align-items: center;
   gap: 455px;
 }
-.contUserInfo > .mainDiv9 > .Navbar > .item1 {
+.contSettings > .mainDiv8 > .Navbar > .item1 {
   height: 100%;
   width: 170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub1 {
+.contSettings > .mainDiv8 > .Navbar > .item1 > .sub1 {
   font-size: 1.2rem;
   /* font-weight: bold; */
   display: grid;
   place-content: center;
 }
-.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 {
+.contSettings > .mainDiv8 > .Navbar > .item1 > .sub2 {
   height: 100%;
-  width: 90px;
+  width: 110px;
   overflow-y: hidden;
 }
-.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 > img {
+.contSettings > .mainDiv8 > .Navbar > .item1 > .sub2 > img {
   height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(150%);
 }
-.contUserInfo > .mainDiv9 > .Navbar > .item2 {
+.contSettings > .mainDiv8 > .Navbar > .item2 {
   height: 100;
   width: fit-content;
   font-size: 38px;
@@ -61,7 +60,7 @@
   place-content: center;
   font-weight: 700;
 }
-.contUserInfo > .mainDiv9 > .Settings {
+.contSettings > .mainDiv8 > .Settings {
   height: fit-content;
   width: 1380px;
   display: flex;
@@ -70,12 +69,12 @@
   align-items: center;
   gap: 120px;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Line {
+.contSettings > .mainDiv8 > .Settings > .Line {
   height: 2.5px;
   width: 100%;
   background-color: var(--Line-color);
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content {
+.contSettings > .mainDiv8 > .Settings > .Content {
   width: 400px;
   height: 620px;
   display: flex;
@@ -84,7 +83,7 @@
   flex-direction: column;
   gap: 60px;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 {
+.contSettings > .mainDiv8 > .Settings > .Content > .item1 {
   height: 180px;
   width: 180px;
   display: flex;
@@ -92,28 +91,28 @@
   justify-content: space-between;
   align-items: center;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 {
+.contSettings > .mainDiv8 > .Settings > .Content > .item1 > .sub1 {
   height: 102px;
   width: 102px;
   border-radius: 50%;
   overflow: hidden;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 > img {
+.contSettings > .mainDiv8 > .Settings > .Content > .item1 > .sub1 > img {
   height: 100%;
   width: 100%;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub2 {
+.contSettings > .mainDiv8 > .Settings > .Content > .item1 > .sub2 {
   font-size: 28px;
   font-weight: 700;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 {
+.contSettings > .mainDiv8 > .Settings > .Content > .item2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 18px;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input {
+.contSettings > .mainDiv8 > .Settings > .Content > .item2 > .input {
   height: 80px;
   width: 315px;
   display: flex;
@@ -122,8 +121,8 @@
   align-items: flex-start;
   gap: 18px;
 }
-.contUserInfo
-  > .mainDiv9
+.contSettings
+  > .mainDiv8
   > .Settings
   > .Content
   > .item2
@@ -131,7 +130,7 @@
   > .inputname {
   font-size: 12px;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input > input {
+.contSettings > .mainDiv8 > .Settings > .Content > .item2 > .input > input {
   height: 45px;
   width: 100%;
   border-radius: 25px;
@@ -140,13 +139,13 @@
   background-color: var(--white-color);
   padding: 20px;
 }
-.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .submitbtn {
+.contSettings > .mainDiv8 > .Settings > .Content > .item2 > .submitbtn {
   height: 50px;
   margin-top: 40px;
   width: 200px;
 }
-.contUserInfo
-  > .mainDiv9
+.contSettings
+  > .mainDiv8
   > .Settings
   > .Content
   > .item2

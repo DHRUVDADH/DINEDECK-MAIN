@@ -69,12 +69,6 @@ const Manager = () => {
               <div className={styles.buttonIcon}>
                 <img src="/Svg/manager-customers.png" alt="" />
               </div>
-              <div className={styles.buttonName}>Table</div>
-            </button>
-            <button className={styles.Buttons}>
-              <div className={styles.buttonIcon}>
-                <img src="/Svg/manager-customers.png" alt="" />
-              </div>
               <div className={styles.buttonName}>Currency conversion</div>
             </button>
             <button className={styles.Buttons}>
@@ -106,6 +100,12 @@ const Manager = () => {
                 <img src="/Svg/manager-customers.png" alt="" />
               </div>
               <div className={styles.buttonName}>Discounts</div>
+            </button>
+            <button className={styles.Buttons}>
+              <div className={styles.buttonIcon}>
+                <img src="/Svg/manager-customers.png" alt="" />
+              </div>
+              <div className={styles.buttonName}>Table</div>
             </button>
           </div>
         </div>
