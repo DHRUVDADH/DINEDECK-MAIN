@@ -13,15 +13,15 @@
   height: fit-content;
   width: 1380px;
   /* margin: 20px 0px; */
-  padding: 45px 0px;
+  padding: 20px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 .contSettings > .mainDiv8 > .Navbar {
-  height: 60px;
+  height: 90px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -36,21 +36,27 @@
   align-items: center;
 }
 .contSettings > .mainDiv8 > .Navbar > .item1 > .sub1 {
-  font-size: 1.2rem;
-  /* font-weight: bold; */
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  font-weight: 700;
   display: grid;
   place-content: center;
 }
 .contSettings > .mainDiv8 > .Navbar > .item1 > .sub2 {
   height: 100%;
   width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow-y: hidden;
 }
 .contSettings > .mainDiv8 > .Navbar > .item1 > .sub2 > img {
   height: 100%;
-  width: 100%;
-  object-fit: cover;
+  aspect-ratio: 1/1;
+  object-fit: contain;
   object-position: center;
+  transform: scale(120%);
 }
 .contSettings > .mainDiv8 > .Navbar > .item2 {
   height: 100;
@@ -152,4 +158,39 @@
   > .submitbtn
   > button {
   letter-spacing: 0.48px;
+}
+.NavbarToggle {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  height: 550px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  visibility: visible;
+}
+.NavbarToggle > .ulToggle {
+  height: fit-content;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavbarToggle > .ulToggle > .liToggle {
+  height: 50px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid var(--Line-color);
+}
+.NavbarToggle > .ulToggle > .liToggle > .liTextToggle {
+  font-size: 20px;
+  height: fit-content;
+  width: 120px;
+  font-weight: 700;
 }

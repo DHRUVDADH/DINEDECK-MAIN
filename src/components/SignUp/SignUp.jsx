@@ -90,8 +90,7 @@ const SignUp = () => {
               onChange={handleOnChange} name='lastname' />
           </div>
           <div className={styles.email}>
-            <input type="email" autoComplete="username" placeholder="Email" id="email" value={email}
-             autoComplete="username" onChange={handleOnChange} name='email' />
+            <input type="email" autoComplete="username" placeholder="Email" id="email" value={email} onChange={handleOnChange} name='email' />
           </div>
           <div className={styles.password}>
             <input

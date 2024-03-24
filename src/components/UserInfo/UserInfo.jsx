@@ -1,15 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../Button/Button'
 import { SlMenu } from "react-icons/sl";
+import { IoClose } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import check from "../../../public/Svg/solar_bill-check-linear.svg"
 import styles from './UserInfo.module.css'
 
 const UserInfo = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleNavbar = () => {
+    setIsVisible(!isVisible);
+
+  };
   return (
     <div className={styles.contUserInfo}>
       <div className={styles.mainDiv9}>
         <div className={styles.Navbar}>
           <div className={styles.item1}>
-            <div className={styles.sub1}><SlMenu /></div>
+            <div className={styles.sub1} onClick={toggleNavbar}>{isVisible ? <IoClose /> : <SlMenu />}</div>
+            {
+              isVisible ?
+                <nav className={`${styles.NavbarToggle}`} id="navbar">
+                  <ul className={`${styles.ulToggle} `}>
+                    <li className={styles.liToggle}>
+                      <div className={styles.liIconToggle}>
+                        <img src={check} alt="svg" />
+                      </div>
+                      <div className={styles.liTextToggle}>Billings</div>
+                    </li>
+                    <Link to="/Manager" className={`${styles.liToggle} nav-link`}>
+                      <div className={styles.liIconToggle}>
+                        <img src={check} alt="svg" />
+                      </div>
+                      <div className={styles.liTextToggle}>Operations</div>
+                    </Link>
+                    <li className={styles.liToggle}>
+                      <div className={styles.liIconToggle}>
+                        <img src={check} alt="svg" />
+                      </div>
+                      <div className={styles.liTextToggle}>Reports</div>
+                    </li>
+                  </ul>
+                </nav>
+                : <></>
+            }
             <div className={styles.sub2}>
               <img src="/Assets/logo.png" alt="" />
             </div>
