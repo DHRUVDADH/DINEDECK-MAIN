@@ -23,7 +23,7 @@ exports.isLoggedin = async (req, res, next) => {
       });
     }
     const user = jwt.verify(token, process.env.SECRET);
-   
+
     const userAtDb = await userModel.findOne({ email: user.email });
     
     if (!userAtDb) {

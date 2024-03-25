@@ -14,7 +14,8 @@ const signUp = async (req, res) => {
                     success:false,
                     message:"All fields are required",
                 })
-           }
+        }
+        
         const existingUser = await User.findOne({email});                   //check user already exist or not
         if(existingUser){
             return res.json({
