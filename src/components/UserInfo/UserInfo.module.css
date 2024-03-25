@@ -1,0 +1,204 @@
+/* .mainDiv3 > .contUserInfo1 > .Line {
+  height: 2px;
+  width: 95%;
+  background-color: var(--Line-color);
+} */
+.contUserInfo {
+  height: fit-content;
+  width: 98vw;
+  display: grid;
+  place-content: center;
+}
+.contUserInfo > .mainDiv9 {
+  height: fit-content;
+  width: 1380px;
+  /* margin: 20px 0px; */
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.contUserInfo > .mainDiv9 > .Navbar {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 400px;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 {
+  height: 100%;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub1 {
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  font-weight: 700;
+  display: grid;
+  place-content: center;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 {
+  height: 100%;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item1 > .sub2 > img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(120%);
+}
+.contUserInfo > .mainDiv9 > .Navbar > .item2 {
+  height: 100;
+  width: fit-content;
+  font-size: 38px;
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+}
+.contUserInfo > .mainDiv9 > .Settings {
+  height: fit-content;
+  width: 1380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Line {
+  height: 2.5px;
+  width: 100%;
+  background-color: var(--Line-color);
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content {
+  width: 750px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 {
+  height: 180px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 {
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub1 > img {
+  height: 100%;
+  width: 100%;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item1 > .sub2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 {
+  height: 430px;
+  display: grid;
+  grid-template-columns: 315px 315px;
+  grid-template-rows: 80px 80px 80px 50px;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input {
+  height: 80px;
+  width: 315px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.contUserInfo
+  > .mainDiv9
+  > .Settings
+  > .Content
+  > .item2
+  > .input
+  > .inputname {
+  font-size: 12px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .input > input {
+  height: 45px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  box-shadow: none;
+  background-color: var(--white-color);
+  padding: 20px;
+}
+.contUserInfo > .mainDiv9 > .Settings > .Content > .item2 > .submitbtn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: center;
+  height: 50px;
+  margin-top: 40px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+.contUserInfo
+  > .mainDiv9
+  > .Settings
+  > .Content
+  > .item2
+  > .submitbtn
+  > button {
+  height: 50px;
+  width: 200px;
+  letter-spacing: 0.48px;
+}
+.NavbarToggle {
+  position: absolute;
+  left: 20px;
+  top: 160px;
+  height: 550px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  visibility: visible;
+}
+.NavbarToggle > .ulToggle {
+  height: fit-content;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavbarToggle > .ulToggle > .liToggle {
+  height: 50px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid var(--Line-color);
+}
+.NavbarToggle > .ulToggle > .liToggle > .liTextToggle {
+  font-size: 20px;
+  height: fit-content;
+  width: 120px;
+  font-weight: 700;
+}

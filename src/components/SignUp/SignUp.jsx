@@ -83,15 +83,14 @@ const SignUp = () => {
         <div className={styles.item2}>
           <div className={styles.firstname}>
             <input type="text" placeholder="First Name" id="fname" value={firstname}
-              onChange={handleOnChange} name='firstname' />
+              autoComplete="username" onChange={handleOnChange} name='firstname' />
           </div>
           <div className={styles.lastname}>
             <input type="text" placeholder="Last Name" id="lname" value={lastname}
               onChange={handleOnChange} name='lastname' />
           </div>
           <div className={styles.email}>
-            <input type="email" autoComplete="username" placeholder="Email" id="email" value={email}
-              onChange={handleOnChange} name='email' />
+            <input type="email" autoComplete="username" placeholder="Email" id="email" value={email} onChange={handleOnChange} name='email' />
           </div>
           <div className={styles.password}>
             <input
@@ -134,14 +133,14 @@ const SignUp = () => {
             </Link>
           </div>
           <div className={styles.but2}>
-            <Link to="/Orders" className={styles.Link}>
+            <div to="/Orders" className={styles.Link}>
               <Button
                 className="redhoverme"
                 isColor="white"
                 isShape="oval"
                 content="Customer"
               />
-            </Link>
+            </div>
           </div>
           <div className={styles.but3}>
             <Link className={styles.Link}>

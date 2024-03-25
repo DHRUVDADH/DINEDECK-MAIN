@@ -1,10 +1,35 @@
-import React from 'react'
-import styles from './Manager.module.css'
-import Navbar2 from '../Navbar2/Navbar2'
+import React, { useState , useEffect } from "react";
+import styles from "./Manager.module.css";
+import Navbar2 from "../Navbar2/Navbar2";
+import { apiConnector } from "../../services/apiconnector";
 
+
+async function find(setLoading){
+  setLoading(true);
+  try{
+    const response = await apiConnector(
+      "get",
+      "http://localhost:3000/api/v1/auth/Manager"
+    );
+    console.log(response);
+  }catch(err){
+    console.log(err)
+  }
+  setLoading(false);
+}
 const Manager = () => {
+ const [loading , setLoading] = useState(false);
+ 
+ useState(()=>{
+  find(setLoading);
+ },[])
+
   return (
-    <div className={styles.mainDiv3}>
+    <>  {
+    loading ? (<h1> Loading...</h1>) : (
+
+        
+<div className={styles.mainDiv3}>
       <Navbar2></Navbar2>
       <div className={styles.cont1}>
         <div className={styles.Line}></div>
@@ -44,12 +69,6 @@ const Manager = () => {
               <div className={styles.buttonIcon}>
                 <img src="/Svg/manager-customers.png" alt="" />
               </div>
-              <div className={styles.buttonName}>Table</div>
-            </button>
-            <button className={styles.Buttons}>
-              <div className={styles.buttonIcon}>
-                <img src="/Svg/manager-customers.png" alt="" />
-              </div>
               <div className={styles.buttonName}>Currency conversion</div>
             </button>
             <button className={styles.Buttons}>
@@ -61,7 +80,9 @@ const Manager = () => {
           </div>
 
           <div className={styles.sub2}>
-            <div className={styles.item1}>Set the Configuration for your restaurant</div>
+            <div className={styles.item1}>
+              Set the Configuration for your restaurant
+            </div>
             <button className={styles.Buttons}>
               <div className={styles.buttonIcon}>
                 <img src="/Svg/manager-customers.png" alt="" />
@@ -80,11 +101,22 @@ const Manager = () => {
               </div>
               <div className={styles.buttonName}>Discounts</div>
             </button>
+            <button className={styles.Buttons}>
+              <div className={styles.buttonIcon}>
+                <img src="/Svg/manager-customers.png" alt="" />
+              </div>
+              <div className={styles.buttonName}>Table</div>
+            </button>
           </div>
         </div>
       </div>
     </div>
-  )
-}
 
-export default Manager
+    )
+  }
+  </>
+
+  );
+};
+
+export default Manager;

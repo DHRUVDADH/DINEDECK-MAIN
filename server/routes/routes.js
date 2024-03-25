@@ -11,11 +11,11 @@ router.post("/signup", signUp)
 // router.post("/changepassword", auth, changePassword)     
 
 
-router.get("/Customer",isLoggedin,isCustomer,(req,res)=>{
-    console.log('customer yeah');
+router.get("/Manager",isLoggedin,isManager,(req,res)=>{
+    console.log('Manager yeah');
     res.json({
         success:true,
-        message:"welcome you login as student"
+        message:"welcome you login as Manager",
     })
 })
 

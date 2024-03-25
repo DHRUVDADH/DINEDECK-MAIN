@@ -20,6 +20,7 @@
   display: grid;
   place-content: center;
 }
+
 .navigation2 > .cont1 > .sub2 {
   height: 100%;
   width: 90px;
@@ -94,4 +95,40 @@
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
+}
+
+.NavbarToggle {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  height: 550px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  visibility: visible;
+}
+.NavbarToggle > .ulToggle {
+  height: fit-content;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavbarToggle > .ulToggle > .liToggle {
+  height: 50px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid var(--Line-color);
+}
+.NavbarToggle > .ulToggle > .liToggle > .liTextToggle {
+  font-size: 20px;
+  height: fit-content;
+  width: 120px;
+  font-weight: 700;
 }
