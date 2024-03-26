@@ -28,12 +28,44 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
 }
 .mainDiv5 > .cont1 > .Content > .item1 {
-  height: 25px;
-  width: 200px;
+  height: 40px;
+  width: 220px;
+  margin-left: 20px;
+}
+.mainDiv5 > .cont1 > .Content > .item1 > .search {
+  height: 100%;
+  width: 100%;
+  background-color: var(--white-color);
+  border-radius: 22.5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.mainDiv5 > .cont1 > .Content > .item1 > .search > .sub1 {
+  height: 100%;
+  width: 25px;
+  display: grid;
+  place-content: center;
+}
+.mainDiv5 > .cont1 > .Content > .item1 > .search > .sub2 {
+  height: 100%;
+  width: 150px;
+  box-shadow: none;
+  background-color: var(--white-color);
+  border: none;
+  border-left: 3px solid var(--bg-color);
+  padding-left: 5px;
+  caret-color: rgba(0, 0, 0, 0.6);
+}
+.mainDiv5 > .cont1 > .Content > .item1 > .search > .sub2:focus {
+  outline: none;
 }
 .mainDiv5 > .cont1 > .Content > .item2 {
   height: fit-content;

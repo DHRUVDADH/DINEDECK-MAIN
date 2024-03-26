@@ -12,6 +12,7 @@ import ResetPassword from "./components/ResetPassword/ResetPassword"
 import CheckEmail from "./components/CheckEmail/CheckEmail"
 import Settings from "./components/Settings/Settings"
 import UserInfo from "./components/UserInfo/UserInfo"
+import OrderItems from "./components/OrderItems/OrderItems"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/CheckEmail" element={<CheckEmail />} />
         <Route path="/Settings" element={<Settings />} />
         <Route path="/UserInfo" element={<UserInfo />} />
+        <Route path="/OrderItems" element={<OrderItems />} />
       </Routes >
     </div >
   )

@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
 import styles from './OrderDeck.module.css'
 import Navbar2 from '../Navbar2/Navbar2'
-
+import search from '/Svg/search.svg'
 
 const OrderDeck = () => {
-
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = (searchTerm) => {
-    // Perform search logic here, e.g., fetch data from an API
-    // Update searchResults state with the search results
-
-  };
 
   const showHtmlContent = true;
   const Amount = 0;
@@ -70,7 +62,7 @@ const OrderDeck = () => {
       Created: [date.getHours() + ":" + date.getMinutes(), date.toLocaleDateString()],
       Buttons: ["View", "Bill", "Print"]
     },
-]
+  ]
 
   return (
     <div className={styles.mainDiv5}>
@@ -79,7 +71,12 @@ const OrderDeck = () => {
         <div className={styles.Line}></div>
         <div className={styles.Content}>
           <div className={styles.item1}>
-            {/* <SearchBar onSearch={{ handleSearch }}></SearchBar> */}
+            <form className={styles.search}>
+              <div className={styles.sub1}>
+                <img src={search} alt="" />
+              </div>
+              <input className={styles.sub2} placeholder='Search...' type="text" autoComplete='asdsdasd' ></input>
+            </form>
           </div>
           <div className={styles.item2}>
             <table className={styles.table}>
@@ -120,7 +117,6 @@ const OrderDeck = () => {
                       <button>{row.Buttons[1]}</button>
                       <button>{row.Buttons[2]}</button>
                     </td>
-                    {/* Render additional cells for each row */}
                   </tr>
                 ))}
               </tbody>

@@ -82,7 +82,7 @@
 }
 .contSettings > .mainDiv8 > .Settings > .Content {
   width: 400px;
-  height: 620px;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,6 +146,9 @@
   padding: 20px;
 }
 .contSettings > .mainDiv8 > .Settings > .Content > .item2 > .submitbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   margin-top: 40px;
   width: 200px;
@@ -193,4 +196,31 @@
   height: fit-content;
   width: 120px;
   font-weight: 700;
+}
+.editbtn {
+  height: 100%;
+  width: 70%;
+  border-radius: 25px;
+  display: grid;
+  place-content: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+}
+.toggledInput {
+  height: 45px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  box-shadow: none;
+  background-color: var(--white-color);
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13px;
 }
