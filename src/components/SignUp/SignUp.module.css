@@ -127,12 +127,20 @@
   height: 45px;
   width: 135px;
 }
-.mainDiv2 > .cont2 > .item3 > div > .Link > button {
+.mainDiv2 > .cont2 > .item3 > div > div,
+.mainDiv2 > .cont2 > .item3 > div > .Link {
+  height: 100%;
+  width: 100%;
+}
+.mainDiv2 > .cont2 > .item3 > div > .Link > button,
+.mainDiv2 > .cont2 > .item3 > div > div > button {
+  height: inherit;
   font-size: 16px;
   font-weight: 700;
   border-radius: 35px;
 }
-.mainDiv2 > .cont2 > .item3 > div > .Link > button:focus {
+.mainDiv2 > .cont2 > .item3 > div > .Link > button:focus,
+.mainDiv2 > .cont2 > .item3 > div > div > button:focus {
   background-color: var(--primary-color);
   color: var(--white-color);
 }

@@ -5,13 +5,58 @@ import { Link } from 'react-router-dom';
 import { SlMenu } from "react-icons/sl";
 import { MdQuestionMark } from "react-icons/md";
 import { VscBell, VscBellDot } from "react-icons/vsc";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { IoClose } from "react-icons/io5";
+import check from "../../../public/Svg/solar_bill-check-linear.svg"
 
-
+<<<<<<< HEAD
 const Navbar2 = ({userData}) => {
+=======
+const Navbar2 = () => {
+
+
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleNavbar = () => {
+    setIsVisible(!isVisible);
+
+  };
+
+>>>>>>> e458b9544874207461fe7b76a387ccdbfa7eade0
   return (
+
     <div className={styles.navigation2}>
       <div className={styles.cont1}>
-        <div className={styles.sub1}><SlMenu /></div>
+        <div className={styles.sub1}>
+          <div onClick={toggleNavbar}>
+            {isVisible ? <IoClose /> : <SlMenu />}</div>
+          {
+            isVisible ?
+              <nav className={`${styles.NavbarToggle}`} id="navbar">
+                <ul className={`${styles.ulToggle} `}>
+                  <li className={styles.liToggle}>
+                    <div className={styles.liIconToggle}>
+                      <img src={check} alt="svg" />
+                    </div>
+                    <div className={styles.liTextToggle}>Billings</div>
+                  </li>
+                  <Link to="/Manager" className={`${styles.liToggle} nav-link`}>
+                    <div className={styles.liIconToggle}>
+                      <img src={check} alt="svg" />
+                    </div>
+                    <div className={styles.liTextToggle}>Operations</div>
+                  </Link>
+                  <li className={styles.liToggle}>
+                    <div className={styles.liIconToggle}>
+                      <img src={check} alt="svg" />
+                    </div>
+                    <div className={styles.liTextToggle}>Reports</div>
+                  </li>
+                </ul>
+              </nav>
+              : <></>
+          }
+        </div>
         <div className={styles.sub2}>
           <img src="/Assets/logo.png" alt="logo" />
         </div>
@@ -33,8 +78,13 @@ const Navbar2 = ({userData}) => {
           </div>
         </div>
         <div className={styles.sub2}>
+<<<<<<< HEAD
           <div className={styles.name}>meet</div>
           <Link to="/UserInfo" className={styles.symbol}>
+=======
+          <div className={styles.name}>User</div>
+          <Link to='/UserInfo' className={styles.symbol}>
+>>>>>>> e458b9544874207461fe7b76a387ccdbfa7eade0
             <img src="/Assets/user-profile-image.png" alt="userphoto" />
           </Link>
         </div>

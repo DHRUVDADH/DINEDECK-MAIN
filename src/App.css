@@ -15,6 +15,7 @@
   --yellow-orderbtncolor: #fffcae;
   --skin-orderbtncolor: #ffe9d0;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -54,3 +55,13 @@ body {
 .skinorderbtncolor {
   background-color: var(--skin-orderbtncolor);
 }
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+/* .nav-link:focus,
+.nav-link:active {
+  outline: none;
+} */
