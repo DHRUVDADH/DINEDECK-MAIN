@@ -78,7 +78,7 @@ const Orders = () => {
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="gray"></OrderButton>
-                <OrderButton number="1" type="gray"></OrderButton>
+                <OrderButton number="1" type="gray"></OrderButton> 
               </div>
             </div>
           </div>
