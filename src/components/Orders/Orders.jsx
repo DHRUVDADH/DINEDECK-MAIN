@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Orders = () => {
   return (
     <div className={styles.mainDiv4}>
-      <Navbar2></Navbar2>
+      <Navbar2 ></Navbar2>
       <div className={styles.cont1}>
         <div className={styles.Line}></div>
         <div className={styles.Content}>

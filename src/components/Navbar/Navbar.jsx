@@ -37,8 +37,8 @@ const Navbar = () => {
           </ul> */}
         </div>
         <div className="pointer_cursor">Outlet Types</div>
-        <Link to='/UserInfo' className="pointer_cursor">Resource</Link>
-        <Link to='/Settings' id="DemoNavbar" className="pointer_cursor" >Demo</Link>
+        <div className="pointer_cursor">Resource</div>
+        <div  id="DemoNavbar" className="pointer_cursor" >Demo</div>
       </div>
       <div className={styles.cont3}>
         <div>

@@ -16,6 +16,7 @@ router.get("/Manager",isLoggedin,isManager,(req,res)=>{
     res.json({
         success:true,
         message:"welcome you login as Manager",
+        user:req.user
     })
 })
 

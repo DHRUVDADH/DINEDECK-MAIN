@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './Navbar2.module.css'
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom';
 import { SlMenu } from "react-icons/sl";
 import { MdQuestionMark } from "react-icons/md";
 import { VscBell, VscBellDot } from "react-icons/vsc";
 
 
-const Navbar2 = () => {
+const Navbar2 = ({userData}) => {
   return (
     <div className={styles.navigation2}>
       <div className={styles.cont1}>
@@ -32,10 +33,10 @@ const Navbar2 = () => {
           </div>
         </div>
         <div className={styles.sub2}>
-          <div className={styles.name}>User</div>
-          <button className={styles.symbol}>
+          <div className={styles.name}>meet</div>
+          <Link to="/UserInfo" className={styles.symbol}>
             <img src="/Assets/user-profile-image.png" alt="userphoto" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
