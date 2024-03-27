@@ -3,16 +3,7 @@ const mongoose = require("mongoose");
 // Define the user schema using the Mongoose Schema constructor
 const restaurentSchema = new mongoose.Schema(
 	{
-		totaltable: {
-			type: Number,
-			required: true,
-			trim: true,
-		},
-		totalhall: {
-			type: Number,
-			required: true,
-			trim: true,
-		},
+		
 	}
 );
 

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const router = require('./routes/routes')
+const {halls} = require("./controller/hall")
 require("dotenv").config();
 const PORT = process.env.PORT || 4000 ;
 const cookie=require("cookie-parser");
@@ -18,6 +19,9 @@ const dbConnect = require("./config/database");
 dbConnect();
 
 app.use("/api/v1/auth",router);
+
+
+app.post('/test',halls)
 
 app.listen( PORT ,()=>
 {
