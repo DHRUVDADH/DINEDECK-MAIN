@@ -29,6 +29,7 @@ function App() {
         <Route path="/Settings" element={<Settings />} />
         <Route path="/UserInfo" element={<UserInfo />} />
         <Route path="/OrderItems" element={<OrderItems />} />
+        <Route path="*" element={<h1>404 page not found</h1>}></Route>
       </Routes >
     </div >
   )

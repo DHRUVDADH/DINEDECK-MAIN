@@ -5,6 +5,7 @@ import Navbar2 from '../Navbar2/Navbar2'
 import { Link } from 'react-router-dom'
 
 const Orders = () => {
+  const array=new Array(2).fill(null);
   return (
     <div className={styles.mainDiv4}>
       <Navbar2 ></Navbar2>
@@ -79,6 +80,13 @@ const Orders = () => {
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="gray"></OrderButton>
                 <OrderButton number="1" type="gray"></OrderButton> 
+
+                {/* {array.map((_,index) => {
+                  return <div key={index}>
+                  <OrderButton number="1" type="green"></OrderButton>
+                  </div>
+                })} */}
+
               </div>
             </div>
           </div>

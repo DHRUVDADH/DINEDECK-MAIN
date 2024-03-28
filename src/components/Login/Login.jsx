@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
+
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -30,6 +32,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
+
       const response = await apiConnector(
         "POST",
         "http://localhost:3000/api/v1/auth/login",
@@ -47,7 +50,8 @@ const Login = () => {
       console.log(err.msg);
     }
   };
-
+  
+ 
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
@@ -96,7 +100,7 @@ const Login = () => {
           </div>
         </form>
 
-        <div className={styles.item3}>
+        <div className={styles.item3} >
           <Link to="/ResetPassword" className={styles.forgot}>
             Forgot password?
           </Link>

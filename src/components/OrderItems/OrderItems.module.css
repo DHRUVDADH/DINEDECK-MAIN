@@ -172,14 +172,23 @@
   font-size: 16px;
   letter-spacing: 0.48px;
 }
-.mainDiv10 > .container > .cont3 > .sub {
+.mainDiv10 > .container > .cont3 > .item2 {
+  height: fit-content;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+}
+.mainDiv10 > .container > .cont3 > .item2 > .sub {
   height: 30px;
   width: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.mainDiv10 > .container > .cont3 > .sub > .name {
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .name {
   height: 100%;
   width: 150px;
   font-size: 16px;
@@ -187,7 +196,7 @@
   font-weight: 600;
   line-height: 150%; /* 24px */
 }
-.mainDiv10 > .container > .cont3 > .sub > .quanBtn {
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .quanBtn {
   height: 100%;
   width: fit-content;
   display: flex;
@@ -195,8 +204,8 @@
   align-items: center;
   gap: 6px;
 }
-.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .subtract,
-.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .add {
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .quanBtn > .subtract,
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .quanBtn > .add {
   height: 100%;
   width: 30px;
   display: grid;
@@ -204,11 +213,17 @@
   background-color: #d9d9d9;
   border-radius: 6px;
 }
-.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .count {
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .quanBtn > .count {
   height: 100%;
   width: 50px;
   display: grid;
   place-content: center;
   background-color: #d9d9d9;
   border-radius: 6px;
+}
+.mainDiv10 > .container > .cont3 > .item2 > .sub > .cost {
+  height: fit-content;
+  width: 40px;
+  display: grid;
+  place-content: center;
 }

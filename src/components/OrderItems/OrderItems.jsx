@@ -44,13 +44,14 @@ const OrderItems = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+
     console.log("Count changed:", count);
   }, [count]); // Dependency array with `count`
 
-  const handleAddClick = () => {
+  const handleAddClick = (id) => {
     setCount(prevCount => prevCount + 1);
   };
-  const handleSubtractClick = () => {
+  const handleSubtractClick = (id) => {
     setCount(prevCount => prevCount - 1);
   };
 
@@ -99,21 +100,32 @@ const OrderItems = () => {
             <div className={styles.price}>Price</div>
           </div>
           <div className={styles.item2}>
-          {
-            menuItems.map((item) => {
-              return (
-                <div className={styles.sub} key={item.id}>
-                  <div className={styles.name}>{item.name}</div>
-                  <div className={styles.quanBtn}>
-                    <div className={styles.subtract} onClick={handleSubtractClick}><FaMinus /></div>
-                    <div className={styles.count}>{count}</div>
-                    <div className={styles.add} onClick={handleAddClick}><FaPlus /></div>
+            {/* {
+              menuItems.map((item) => {
+                const [cost, setCost] = useState(item.cost);
+                const updateValueminus = () => {
+                  setCost(prevCount => prevCount + (item.cost));
+                }
+                const updateValueplus = () => {
+                  setCost(prevCount => prevCount - (item.cost));
+                }
+                useEffect(() => {
+
+                  console.log("Cost changed:", cost);
+                }, [cost]);
+                return (
+                  <div className={styles.sub} key={item.id}>
+                    <div className={styles.name}>{item.name}</div>
+                    <div className={styles.quanBtn}>
+                      <div className={styles.subtract} onClick={`${handleSubtractClick(item.id)} ${updateValueminus}`}><FaMinus /></div>
+                      <div className={styles.count}>{count}</div>
+                      <div className={styles.add} onClick={`${handleAddClick(item.id)} ${updateValueplus}`}><FaPlus /></div>
+                    </div>
+                    <div className={styles.cost}>{cost}</div>
                   </div>
-                  <div className={styles.cost}></div>
-                </div>
-              )
-            })
-          }
+                )
+              })
+            } */}
           </div>
         </div>
       </div>
