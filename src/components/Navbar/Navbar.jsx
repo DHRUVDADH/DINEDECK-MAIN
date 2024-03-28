@@ -43,13 +43,8 @@ const Navbar = ({ parentRef }) => {
           </ul> */}
         </div>
         <div className="pointer_cursor">Outlet Types</div>
-<<<<<<< HEAD
-        <div className="pointer_cursor">Resource</div>
-        <div  id="DemoNavbar" className="pointer_cursor" >Demo</div>
-=======
         <div to='/UserInfo' className="pointer_cursor">Resource</div>
         <div onClick={scrollToTarget} id="DemoNavbar" className="pointer_cursor" >Try</div>
->>>>>>> e458b9544874207461fe7b76a387ccdbfa7eade0
       </div>
       <div className={styles.cont3}>
         <div>

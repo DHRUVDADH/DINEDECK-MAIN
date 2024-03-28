@@ -13,6 +13,29 @@ const Settings = () => {
     setIsVisible(!isVisible);
 
   };
+  const [currentP, setCurrentP] = useState('Initial Value');
+  const [newP, setNewP] = useState('Initial Value');
+  const [confirmP, setConfirmP] = useState('Initial Value');
+  const [editMode, setEditMode] = useState(false);
+
+  const handleEditClick = () => {
+    setEditMode(true);
+  };
+
+  const handleSaveClick = (e) => {
+    e.preventDefault();
+    setCurrentP(e.target[1].value);
+    setNewP(e.target[2].value);
+    setConfirmP(e.target[3].value);
+    console.log(e);
+    setEditMode(false);
+  };
+  const handleChange = (e) => {
+    setCurrentP(e.target.value);
+    setNewP(e.target.value);
+    setConfirmP(e.target.value);
+    // console.log(currentP);
+  };
   return (
     <div className={styles.contSettings}>
       <div className={styles.mainDiv8}>
@@ -64,18 +87,42 @@ const Settings = () => {
             <form className={styles.item2}>
               <div className={`${styles.input1} ${styles.input}`}>
                 <div className={styles.inputname}>Current Password</div>
-                <input type="password" autoComplete='hbhjv' />
+                {/* <input type="password" autoComplete='hbhjv' /> */}
+                {editMode ? (
+                  <input onChange={handleChange} placeholder={currentP} type="text" autoComplete='hbhjv' />
+                ) : (
+                  <div className={styles.toggledInput}>{currentP}</div>
+                )}
               </div>
-              <div className={`${styles.input2} ${styles.input}`}>
-                <div className={styles.inputname}>New Password</div>
-                <input type="password" autoComplete='hbhjv' />
-              </div>
-              <div className={`${styles.input3} ${styles.input}`}>
-                <div className={styles.inputname}>Confirm Password</div>
-                <input type="password" autoComplete='hbhjv' />
-              </div>
+              {
+                editMode ?
+                  <><div className={`${styles.input2} ${styles.input}`}>
+                    <div className={styles.inputname}>New Password</div>
+                    {/* <input type="password" autoComplete='hbhjv' /> */}
+                    {editMode ? (
+                      <input onChange={handleChange} type="text" autoComplete='hbhjv' />
+                    ) : (
+                      <div className={styles.toggledInput}>{newP}</div>
+                    )}
+                  </div><div className={`${styles.input3} ${styles.input}`}>
+                      <div className={styles.inputname}>Confirm Password</div>
+                      {/* <input type="password" autoComplete='hbhjv' /> */}
+                      {editMode ? (
+                        <input onChange={handleChange} type="text" autoComplete='hbhjv' />
+                      ) : (
+                        <div className={styles.toggledInput}>{confirmP}</div>
+                      )}
+                    </div></>
+                  :
+                  <></>
+              }
               <div className={styles.submitbtn}>
-                <Button type="submit" isShape='oval' isColor='red' content='Save changes'></Button>
+                {/* <Button type="submit" isShape='oval' isColor='red' content='Save changes'></Button> */}
+                {editMode ? (
+                  <Button onSubmit={handleSaveClick} type="submit" isShape='oval' isColor='red' content='Save changes'></Button>
+                ) : (
+                  <div onClick={handleEditClick} className={styles.editbtn}>Edit</div>
+                )}
               </div>
             </form>
           </div>

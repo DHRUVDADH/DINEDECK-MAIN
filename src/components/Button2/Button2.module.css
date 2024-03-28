@@ -1,0 +1,19 @@
+.btncont {
+  height: 90px;
+  width: 190px;
+  display: grid;
+  place-content: center;
+  box-shadow: none;
+  border: none;
+  background-color: var(--white-color);
+  border-radius: 2px;
+}
+.veg {
+  border-top: 5px solid #34a853;
+}
+.nonveg {
+  border-top: 5px solid #f32c33;
+}
+.semiveg {
+  border-top: 5px solid #fbbc05;
+}

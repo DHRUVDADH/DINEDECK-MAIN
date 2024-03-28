@@ -1,0 +1,214 @@
+.mainDiv10 {
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 44.3px;
+  padding-top: 40px;
+}
+.mainDiv10 > .container {
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  border-top: 1px solid #ddd;
+}
+.mainDiv10 > .container > .cont1 {
+  width: 272px;
+  height: 700px;
+  background-color: #ffe9e9;
+}
+.mainDiv10 > .container > .cont1 > .sub {
+  height: calc(100% -120px);
+  width: calc(100% - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px 60px;
+  gap: 32px;
+}
+.mainDiv10 > .container > .cont1 > .sub > .item {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainDiv10 > .container > .cont1 > .sub > .item > .sub1 {
+  height: 32px;
+  width: fit-content;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.66px;
+}
+.mainDiv10 > .container > .cont2 {
+  width: 680px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 56px;
+  padding-top: 18px;
+  border-right: 1px solid #ddd;
+}
+.mainDiv10 > .container > .cont2 > .item1 {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  gap: 22px;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .searchBar {
+  height: 100%;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  border-radius: 17.5px;
+  overflow: hidden;
+  padding-left: 2px;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .searchBar > .sub1 {
+  height: 100%;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+}
+.mainDiv10 > .container > .cont2 > .item1 > .searchBar > .sub2 {
+  height: 100%;
+  width: 160px;
+  box-shadow: none;
+  border: none;
+  border-left: 3px solid var(--bg-color);
+  padding-left: 5px;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .searchBar > .sub2:focus {
+  outline: none;
+}
+
+.mainDiv10 > .container > .cont2 > .item1 > .table {
+  height: 100%;
+  width: 130px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: var(--white-color);
+  padding-left: 20px;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .table > .sub1 {
+  height: 100%;
+  width: 80%;
+  background-color: var(--white-color);
+  border: none;
+  box-shadow: none;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .table > .sub1:focus {
+  outline: none;
+}
+.mainDiv10 > .container > .cont2 > .item1 > .searchBar > .sub2::placeholder,
+.mainDiv10 > .container > .cont2 > .item1 > .table > .sub1::placeholder {
+  color: #4b5563;
+  opacity: 70%;
+}
+.mainDiv10 > .container > .cont2 > .item2 {
+  height: 680px;
+  width: fit-content;
+  padding-left: 20px;
+}
+.mainDiv10 > .container > .cont2 > .item2 > .gridContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 190px);
+  column-gap: 13.5px;
+  grid-template-rows: repeat(2, 90px);
+  row-gap: 36px;
+}
+.mainDiv10 > .container > .cont3 {
+  height: 680px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.mainDiv10 > .container > .cont3 > .item1 {
+  height: 20px;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainDiv10 > .container > .cont3 > .item1 > .items {
+  height: fit-content;
+  width: 150px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  text-align: left;
+  padding-left: 15px;
+}
+.mainDiv10 > .container > .cont3 > .item1 > .quantity {
+  height: fit-content;
+  width: 130px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  text-align: center;
+}
+.mainDiv10 > .container > .cont3 > .item1 > .price {
+  height: fit-content;
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+}
+.mainDiv10 > .container > .cont3 > .sub {
+  height: 30px;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainDiv10 > .container > .cont3 > .sub > .name {
+  height: 100%;
+  width: 150px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+}
+.mainDiv10 > .container > .cont3 > .sub > .quanBtn {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .subtract,
+.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .add {
+  height: 100%;
+  width: 30px;
+  display: grid;
+  place-content: center;
+  background-color: #d9d9d9;
+  border-radius: 6px;
+}
+.mainDiv10 > .container > .cont3 > .sub > .quanBtn > .count {
+  height: 100%;
+  width: 50px;
+  display: grid;
+  place-content: center;
+  background-color: #d9d9d9;
+  border-radius: 6px;
+}
