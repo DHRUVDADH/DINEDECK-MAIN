@@ -7,41 +7,11 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import { apiConnector } from '../../services/apiconnector'
 const OrderItems = () => {
 
-  const menuItems = [
-    {
-      id: 1,
-      name: "Item name 1",
-      cost: 200,
-      type: "veg",
-    },
-    {
-      id: 2,
-      name: "Item name 2",
-      cost: 300,
-      type: "nonveg",
-    },
-    {
-      id: 3,
-      name: "Item name 3",
-      cost: 100,
-      type: "semiveg",
-    },
-    {
-      id: 4,
-      name: "Item name 4",
-      cost: 200,
-      type: "veg",
-    },
-    {
-      id: 5,
-      name: "Item name 5",
-      cost: 250,
-      type: "veg",
-    }
-  ];
 
   const [iteams, setIteams] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [count, setCount] = useState(0);
+
   useState(async () => {
     setLoading(true);
     try {
@@ -54,7 +24,6 @@ const OrderItems = () => {
   }, [])
 
 
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
 
@@ -67,6 +36,8 @@ const OrderItems = () => {
   const handleSubtractClick = (id) => {
     setCount(prevCount => prevCount - 1);
   };
+
+  
 
 
   return (
@@ -124,7 +95,7 @@ const OrderItems = () => {
           </div>
           <div className={styles.item2}>
             <div className={styles.sub} >
-              <div className={styles.name}>Iterm</div>
+              <div className={styles.name}>Mohjan</div>
               <div className={styles.quanBtn}>
                 <div className={styles.subtract}><FaMinus /></div>
                 <div className={styles.count}>0</div>
