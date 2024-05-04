@@ -4,7 +4,7 @@ import OrderButton from '../OrderButton/OrderButton'
 import Navbar2 from '../Navbar2/Navbar2'
 import { Link } from 'react-router-dom'
 
-const Orders = () => {
+const   Orders = () => {
   const array=new Array(2).fill(null);
   return (
     <div className={styles.mainDiv4}>
@@ -38,7 +38,7 @@ const Orders = () => {
             <div className={styles.item1}>
               <div className={styles.text}>Hall name 1</div>
               <div className={styles.orderdiv}>
-                <Link to="/OrderDeck" className={styles.Link}>
+                <Link to="/OrderItems" className={styles.Link}>
                   <OrderButton number="1" type="gray"></OrderButton>
                 </Link>
                 <OrderButton number="1" type="gray"></OrderButton>

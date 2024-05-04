@@ -4,7 +4,7 @@ import Navbar2 from '../Navbar2/Navbar2'
 import search from '/Svg/search.svg'
 import Button2 from '../Button2/Button2'
 import { FaPlus, FaMinus } from "react-icons/fa6";
-
+import { apiConnector } from '../../services/apiconnector'
 const OrderItems = () => {
 
   const menuItems = [
@@ -39,6 +39,19 @@ const OrderItems = () => {
       type: "veg",
     }
   ];
+
+  const [iteams, setIteams] = useState(null);
+  const [loading, setLoading] = useState(false);
+  useState(async () => {
+    setLoading(true);
+    try {
+      const data = await apiConnector("GET", "http://localhost:3000/food/getiteam");
+      setIteams(data.data.data);
+    } catch (err) {
+      console.log(err)
+    }
+    setLoading(false);
+  }, [])
 
 
   const [count, setCount] = useState(0);
@@ -83,15 +96,25 @@ const OrderItems = () => {
               <input className={styles.sub1} type='text' autoComplete='asdada' placeholder='Table Name' />
             </div>
           </div>
-          <div className={styles.item2}>
-            <div className={styles.gridContainer}>
-              {menuItems.map((item) => {
-                return (
-                  <Button2 key={item.id} isType={item.type} isName={item.name}></Button2>
-                )
-              })}
-            </div>
-          </div>
+          {
+            loading ? (<>Loadinhg</>) : (
+
+              iteams === null ? (<>No Data</>) : (
+                <>
+                  <div className={styles.item2}>
+                    <div className={styles.gridContainer}>
+                      {iteams.map((item) => {
+                        return (
+                          <Button2 key={item.id} item={item}></Button2>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                </>)
+
+            )
+          }
         </div>
         <div className={styles.cont3}>
           <div className={styles.item1}>
@@ -100,7 +123,30 @@ const OrderItems = () => {
             <div className={styles.price}>Price</div>
           </div>
           <div className={styles.item2}>
-            {/* {
+            <div className={styles.sub} >
+              <div className={styles.name}>Iterm</div>
+              <div className={styles.quanBtn}>
+                <div className={styles.subtract}><FaMinus /></div>
+                <div className={styles.count}>0</div>
+                <div className={styles.add} ><FaPlus /></div>
+              </div>
+              <div className={styles.cost}>10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default OrderItems
+
+
+
+
+
+
+{/* {
               menuItems.map((item) => {
                 const [cost, setCost] = useState(item.cost);
                 const updateValueminus = () => {
@@ -126,11 +172,3 @@ const OrderItems = () => {
                 )
               })
             } */}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default OrderItems

@@ -41,6 +41,10 @@ const OrderSchema = new Schema({
         required: true,
         default: false,
     },
+    crt_time:{
+        type:Date,
+        default:Date.now(),
+    }
     
 })
 
