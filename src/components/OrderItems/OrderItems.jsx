@@ -3,58 +3,72 @@ import styles from './OrderItems.module.css'
 import Navbar2 from '../Navbar2/Navbar2'
 import search from '/Svg/search.svg'
 import Button2 from '../Button2/Button2'
+import Button from '../Button/Button'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
 const OrderItems = () => {
 
-  const menuItems = [
+  const [menuItems, setMenuItems] = useState([
     {
       id: 1,
       name: "Item name 1",
       cost: 200,
       type: "veg",
+      quantity: 0
     },
     {
       id: 2,
       name: "Item name 2",
       cost: 300,
       type: "nonveg",
+      quantity: 0
     },
     {
       id: 3,
       name: "Item name 3",
       cost: 100,
       type: "semiveg",
+      quantity: 0
     },
     {
       id: 4,
       name: "Item name 4",
       cost: 200,
       type: "veg",
+      quantity: 0
     },
     {
       id: 5,
       name: "Item name 5",
       cost: 250,
       type: "veg",
+      quantity: 0
     }
-  ];
+  ]);
+  const [totalCost, setTotalCost] = useState(0);
 
-
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-
-    console.log("Count changed:", count);
-  }, [count]); // Dependency array with `count`
-
-  const handleAddClick = (id) => {
-    setCount(prevCount => prevCount + 1);
+  const handleIncrement = (id, cost) => {
+    setMenuItems(prevItems => prevItems.map(item => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    }));
+    setTotalCost(prevTotalCost => prevTotalCost + cost);
   };
-  const handleSubtractClick = (id) => {
-    setCount(prevCount => prevCount - 1);
+  const handleDecrement = (id, cost) => {
+    setMenuItems(prevItems => prevItems.map(item => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    }));
+    // const item = menuItems.find(item => item.id === id);
+    // if (item && item.count > 0) {
+    //   setTotalCost(prevTotalCost => prevTotalCost - item.cost);
+    // }
   };
-
+  const totalValue = menuItems.reduce((total, item) => total + (item.quantity * item.cost), 0);
 
   return (
     <div className={styles.mainDiv10}>
@@ -100,36 +114,67 @@ const OrderItems = () => {
             <div className={styles.price}>Price</div>
           </div>
           <div className={styles.item2}>
-            {/* {
+            {
               menuItems.map((item) => {
-                const [cost, setCost] = useState(item.cost);
-                const updateValueminus = () => {
-                  setCost(prevCount => prevCount + (item.cost));
-                }
-                const updateValueplus = () => {
-                  setCost(prevCount => prevCount - (item.cost));
-                }
-                useEffect(() => {
 
-                  console.log("Cost changed:", cost);
-                }, [cost]);
                 return (
                   <div className={styles.sub} key={item.id}>
                     <div className={styles.name}>{item.name}</div>
                     <div className={styles.quanBtn}>
-                      <div className={styles.subtract} onClick={`${handleSubtractClick(item.id)} ${updateValueminus}`}><FaMinus /></div>
-                      <div className={styles.count}>{count}</div>
-                      <div className={styles.add} onClick={`${handleAddClick(item.id)} ${updateValueplus}`}><FaPlus /></div>
+                      <div className={styles.subtract} onClick={() => handleDecrement(item.id, item.cost)}><FaMinus /></div>
+                      <div className={styles.count}>{item.quantity}</div>
+                      <div className={styles.add} onClick={() => handleIncrement(item.id, item.cost)}><FaPlus /></div>
                     </div>
-                    <div className={styles.cost}>{cost}</div>
+                    <div className={styles.cost}>{item.quantity * item.cost}</div>
                   </div>
                 )
               })
-            } */}
+            }
+          </div>
+          <div className={styles.item3}>
+            <div className={styles.subitem1}>Total:</div>
+            <div className={styles.subitem2}>{totalValue}</div>
+          </div>
+          <div className={styles.item4}>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Cash</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Card</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Wallet</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Other</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Part</div>
+            </div>
+          </div>
+          <div className={styles.item5}>
+            <div className={styles.sub1}>
+              <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
+              <div className={styles.btn}>
+                <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
+              </div>
+            </div>
+            <div className={styles.sub2}>
+              <input type='number' className={styles.input} placeholder='Discount(%)'></input>
+              <div className={styles.btn}>
+                <button className={styles.mainBtn2} isColor="white" isShape="oval" content="69"></button>
+              </div>
+            </div>
+            <div className={styles.sub3}></div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

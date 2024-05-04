@@ -1,16 +1,17 @@
 .mainDiv10 {
   height: fit-content;
-  width: 100vw;
+  width: 98vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 44.3px;
   padding-top: 40px;
+  /* overflow-y: hidden; */
 }
 .mainDiv10 > .container {
   height: fit-content;
-  width: 100vw;
+  width: 98vw;
   display: flex;
   align-items: flex-start;
   gap: 35px;
@@ -135,11 +136,12 @@
 }
 .mainDiv10 > .container > .cont3 {
   height: 680px;
-  width: 500px;
+  width: 470px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding-top: 35px;
 }
 .mainDiv10 > .container > .cont3 > .item1 {
   height: 20px;
@@ -174,12 +176,14 @@
 }
 .mainDiv10 > .container > .cont3 > .item2 {
   height: fit-content;
-  width: 450px;
+  width: 470px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 7px;
+  padding: 40px 10px;
+  border-bottom: 1px solid #ddd;
 }
 .mainDiv10 > .container > .cont3 > .item2 > .sub {
   height: 30px;
@@ -226,4 +230,131 @@
   width: 40px;
   display: grid;
   place-content: center;
+}
+.mainDiv10 > .container > .cont3 > .item3 {
+  height: 50px;
+  width: 470px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px;
+}
+.mainDiv10 > .container > .cont3 > .item3 > .subitem1 {
+  width: fit-content;
+  display: grid;
+  place-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.mainDiv10 > .container > .cont3 > .item3 > .subitem2 {
+  width: 40px;
+  display: grid;
+  place-content: center;
+  font-size: 22px;
+}
+.mainDiv10 > .container > .cont3 > .item4 {
+  height: 45px;
+  width: 100%;
+  padding: 0px 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid #ddd;
+}
+.mainDiv10 > .container > .cont3 > .item4 > .sub {
+  height: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.mainDiv10 > .container > .cont3 > .item4 > .sub > .input {
+  width: 14px;
+  height: 14px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.mainDiv10 > .container > .cont3 > .item4 > .sub > .input:checked {
+  background-color: var(--primary-color);
+}
+.mainDiv10 > .container > .cont3 > .item4 > .sub > .text {
+  font-size: 16px;
+  font-weight: 600;
+}
+.mainDiv10 > .container > .cont3 > .item5 {
+  height: fit-content;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub1,
+.mainDiv10 > .container > .cont3 > .item5 > .sub2,
+.mainDiv10 > .container > .cont3 > .item5 > .sub3 {
+  height: 40px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub1 > .input {
+  height: 100%;
+  width: fit-content;
+  background-color: var(--white-color);
+  border-radius: 25px;
+  border: none;
+  padding-left: 20px;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub1 > .input::placeholder {
+  color: #4b5563;
+  font-weight: 400;
+  letter-spacing: 0.42px;
+  opacity: 0.5;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub1 > .btn {
+  height: 100%;
+  width: 120px;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub1 > .btn > button {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.36px;
+  border-radius: 10px;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub2 > .input {
+  height: 100%;
+  width: 120px;
+  box-shadow: none;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--white-color);
+  padding-left: 20px;
+}
+
+.mainDiv10 > .container > .cont3 > .item5 > .sub2 > .input::placeholder {
+  color: #4b5563;
+  font-weight: 400;
+  letter-spacing: 0.42px;
+  opacity: 0.5;
+}
+.mainDiv10 > .container > .cont3 > .item5 > .sub2:nth-child(1) {
+  height: 100%;
+  width: 120px;
+  box-shadow: none;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--white-color);
+  padding-left: 20px;
 }
