@@ -44,7 +44,7 @@ const OrderItems = () => {
       type: "veg",
       quantity: 0
     }
-  ];
+  ]);
 
   const [iteams, setIteams] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -74,7 +74,6 @@ const OrderItems = () => {
     setCount(prevCount => prevCount - 1);
   };
 
-  ]);
   const [totalCost, setTotalCost] = useState(0);
 
   const handleIncrement = (id, cost) => {
@@ -154,7 +153,7 @@ const OrderItems = () => {
             <div className={styles.price}>Price</div>
           </div>
           <div className={styles.item2}>
-            {/* {
+            {
               menuItems.map((item) => {
 
                 return (
@@ -169,12 +168,54 @@ const OrderItems = () => {
                   </div>
                 )
               })
-            } */}
+            }
+          </div>
+          <div className={styles.item3}>
+            <div className={styles.subitem1}>Total:</div>
+            <div className={styles.subitem2}>{totalValue}</div>
+          </div>
+          <div className={styles.item4}>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Cash</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Card</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Wallet</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Other</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Part</div>
+            </div>
+          </div>
+          <div className={styles.item5}>
+            <div className={styles.sub1}>
+              <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
+              <div className={styles.btn}>
+                <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
+              </div>
+            </div>
+            <div className={styles.sub2}>
+              <input type='number' className={styles.input} placeholder='Discount(%)'></input>
+              <div className={styles.btn}>
+                <button className={styles.mainBtn2} isColor="white" isShape="oval" content="69"></button>
+              </div>
+            </div>
+            <div className={styles.sub3}></div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
+         
 
 export default OrderItems
