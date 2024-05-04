@@ -13,10 +13,12 @@ import check from "/Svg/solar_bill-check-linear.svg"
 import signout from "/Svg/signout.svg"
 import setting from "/Svg/setting.svg"
 import profile from "/Svg/profile.svg"
+import { apiConnector } from "../../services/apiconnector";
+// import { response } from 'express';
 
-const Navbar2 = ({ button }) => {
 
 
+const Navbar2 =  ({ button }) => {
   const [isVisibleHam, setIsVisibleHam] = useState(false);
   const toggleNavbar = () => {
     setIsVisibleHam(!isVisibleHam);
@@ -25,13 +27,12 @@ const Navbar2 = ({ button }) => {
   const [isVisibleUser, setIsVisibleUser] = useState(false);
   const toggleInfo = () => {
     setIsVisibleUser(!isVisibleUser);
-
+  
   };
 
-
-
+ 
   return (
-
+   
     <div className={styles.navigation2}>
       <div className={styles.cont1}>
         <div className={styles.sub1}>

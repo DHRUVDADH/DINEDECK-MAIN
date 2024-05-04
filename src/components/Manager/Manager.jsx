@@ -13,8 +13,9 @@ async function find(setLoading) {
     );
     console.log(response);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
+
   setLoading(false);
 }
 const Manager = () => {
@@ -22,13 +23,14 @@ const Manager = () => {
 
   useState(() => {
     find(setLoading);
-  }, [])
+  }, []);
 
   return (
-    <>  {
-      loading ? (<h1> Loading...</h1>) : (
-
-
+    <>
+      {" "}
+      {loading ? (
+        <h1> Loading...</h1>
+      ) : (
         <div className={styles.mainDiv3}>
           <Navbar2></Navbar2>
           <div className={styles.cont1}>
@@ -111,11 +113,8 @@ const Manager = () => {
             </div>
           </div>
         </div>
-
-      )
-    }
+      )}
     </>
-
   );
 };
 
