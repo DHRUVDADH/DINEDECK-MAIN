@@ -3,6 +3,7 @@ import styles from './OrderItems.module.css'
 import Navbar2 from '../Navbar2/Navbar2'
 import search from '/Svg/search.svg'
 import Button2 from '../Button2/Button2'
+import Button from '../Button/Button'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { apiConnector } from '../../services/apiconnector'
 const OrderItems = () => {
@@ -37,8 +38,30 @@ const OrderItems = () => {
     setCount(prevCount => prevCount - 1);
   };
 
-  
+  const [totalCost, setTotalCost] = useState(0);
 
+  const handleIncrement = (id, cost) => {
+    setMenuItems(prevItems => prevItems.map(item => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    }));
+    setTotalCost(prevTotalCost => prevTotalCost + cost);
+  };
+  const handleDecrement = (id, cost) => {
+    setMenuItems(prevItems => prevItems.map(item => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    }));
+    // const item = menuItems.find(item => item.id === id);
+    // if (item && item.count > 0) {
+    //   setTotalCost(prevTotalCost => prevTotalCost - item.cost);
+    // }
+  };
+  const totalValue = menuItems.reduce((total, item) => total + (item.quantity * item.cost), 0);
 
   return (
     <div className={styles.mainDiv10}>
@@ -94,52 +117,68 @@ const OrderItems = () => {
             <div className={styles.price}>Price</div>
           </div>
           <div className={styles.item2}>
-            <div className={styles.sub} >
-              <div className={styles.name}>Mohjan</div>
-              <div className={styles.quanBtn}>
-                <div className={styles.subtract}><FaMinus /></div>
-                <div className={styles.count}>0</div>
-                <div className={styles.add} ><FaPlus /></div>
-              </div>
-              <div className={styles.cost}>10</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default OrderItems
-
-
-
-
-
-
-{/* {
+            {
               menuItems.map((item) => {
-                const [cost, setCost] = useState(item.cost);
-                const updateValueminus = () => {
-                  setCost(prevCount => prevCount + (item.cost));
-                }
-                const updateValueplus = () => {
-                  setCost(prevCount => prevCount - (item.cost));
-                }
-                useEffect(() => {
 
-                  console.log("Cost changed:", cost);
-                }, [cost]);
                 return (
                   <div className={styles.sub} key={item.id}>
                     <div className={styles.name}>{item.name}</div>
                     <div className={styles.quanBtn}>
-                      <div className={styles.subtract} onClick={`${handleSubtractClick(item.id)} ${updateValueminus}`}><FaMinus /></div>
-                      <div className={styles.count}>{count}</div>
-                      <div className={styles.add} onClick={`${handleAddClick(item.id)} ${updateValueplus}`}><FaPlus /></div>
+                      <div className={styles.subtract} onClick={() => handleDecrement(item.id, item.cost)}><FaMinus /></div>
+                      <div className={styles.count}>{item.quantity}</div>
+                      <div className={styles.add} onClick={() => handleIncrement(item.id, item.cost)}><FaPlus /></div>
                     </div>
-                    <div className={styles.cost}>{cost}</div>
+                    <div className={styles.cost}>{item.quantity * item.cost}</div>
                   </div>
                 )
               })
-            } */}
+            }
+          </div>
+          <div className={styles.item3}>
+            <div className={styles.subitem1}>Total:</div>
+            <div className={styles.subitem2}>{totalValue}</div>
+          </div>
+          <div className={styles.item4}>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Cash</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Card</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Wallet</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Other</div>
+            </div>
+            <div className={styles.sub}>
+              <input type='checkbox' className={styles.input}></input>
+              <div className={styles.text}>Part</div>
+            </div>
+          </div>
+          <div className={styles.item5}>
+            <div className={styles.sub1}>
+              <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
+              <div className={styles.btn}>
+                <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
+              </div>
+            </div>
+            <div className={styles.sub2}>
+              <input type='number' className={styles.input} placeholder='Discount(%)'></input>
+              <div className={styles.btn}>
+                <button className={styles.mainBtn2} isColor="white" isShape="oval" content="69"></button>
+              </div>
+            </div>
+            <div className={styles.sub3}></div>
+          </div>
+        </div>
+      </div>
+    </div >
+  )
+}
+
+export default OrderItems
