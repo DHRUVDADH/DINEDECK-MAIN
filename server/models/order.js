@@ -4,14 +4,18 @@ const Schema = mongoose.Schema
 const OrderSchema = new Schema({
     OrderItems: [
         {
-            name: { type: String, required: true },
-            quantity: { type: Number, required: true },
-            price: { type: Number, required: true },
+            _id: { type: mongoose.Schema.Types.ObjectId },
+            iteamName: { type: String },
+            iteamPrice: { type: String },
+            iteamCatogary: { type: String },
+            iteamType: { type: String },
+            __v: { type: Number },
+            quantity: { type: Number }
         },
     ],
     userName: {
         type: String,
-        required: true,
+
     },
     phone: {
         type: String,
@@ -20,32 +24,29 @@ const OrderSchema = new Schema({
         type: String,
     },
     tableno: {
-        type: String,
+        type: Number,
     },
     paytype: {
         type: String,
-        required: true,
-        default:cash
+        default: "cash"
     },
     totalPrice: {
         type: Number,
-        required: true,
         default: 0.0,
     },
-    discount:{
-        type:Number,
-        default:0.1,
+    discount: {
+        type: Number,
+        default: 0.1,
     },
     isPaid: {
         type: Boolean,
-        required: true,
         default: false,
     },
-    crt_time:{
-        type:Date,
-        default:Date.now(),
+    crt_time: {
+        type: Date,
+        default: Date.now(),
     }
-    
+
 })
 
 module.exports = mongoose.model('Order', OrderSchema)
