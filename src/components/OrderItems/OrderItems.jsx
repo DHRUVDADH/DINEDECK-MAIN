@@ -6,12 +6,52 @@ import Button2 from '../Button2/Button2'
 import Button from '../Button/Button'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { apiConnector } from '../../services/apiconnector'
+
 const OrderItems = () => {
 
+  const [menuItems, setMenuItems] = useState([
+    {
+      id: 1,
+      name: "Item name 1",
+      cost: 200,
+      type: "veg",
+      quantity: 0
+    },
+    {
+      id: 2,
+      name: "Item name 2",
+      cost: 300,
+      type: "nonveg",
+      quantity: 0
+    },
+    {
+      id: 3,
+      name: "Item name 3",
+      cost: 100,
+      type: "semiveg",
+      quantity: 0
+    },
+    {
+      id: 4,
+      name: "Item name 4",
+      cost: 200,
+      type: "veg",
+      quantity: 0
+    },
+    {
+      id: 5,
+      name: "Item name 5",
+      cost: 250,
+      type: "veg",
+      quantity: 0
+    }
+  ]);
 
+  const [order, setOrder] = useState([]);
+  const [count, setCount] = useState(0);
   const [iteams, setIteams] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(0);
+  const [totalValue, setTotalValue] = useState(0);
 
   useState(async () => {
     setLoading(true);
@@ -27,41 +67,62 @@ const OrderItems = () => {
 
 
   useEffect(() => {
-
     console.log("Count changed:", count);
-  }, [count]); // Dependency array with `count`
+  }, [count]);
 
-  const handleAddClick = (id) => {
-    setCount(prevCount => prevCount + 1);
-  };
-  const handleSubtractClick = (id) => {
-    setCount(prevCount => prevCount - 1);
-  };
 
-  const [totalCost, setTotalCost] = useState(0);
 
   const handleIncrement = (id, cost) => {
-    setMenuItems(prevItems => prevItems.map(item => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
-    }));
-    setTotalCost(prevTotalCost => prevTotalCost + cost);
+    setOrder(prevItems => {
+      const updatedItems = prevItems.map(item => {
+        if (item._id === id) {
+          setTotalValue(totalValue+cost);
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        setTotalValue(totalValue+cost);
+        return item;
+      });
+      return updatedItems;
+    });
   };
-  const handleDecrement = (id, cost) => {
-    setMenuItems(prevItems => prevItems.map(item => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    }));
-    // const item = menuItems.find(item => item.id === id);
-    // if (item && item.count > 0) {
-    //   setTotalCost(prevTotalCost => prevTotalCost - item.cost);
-    // }
+  
+
+  const handleDecrement = (id,coast) => {
+    setOrder(prevItems => {
+      const updatedOrder = prevItems.map(item => {
+        if (item._id === id) {
+          // If quantity is already 1, remove the item from the order
+          if (item.quantity === 1) {
+            setTotalValue(totalValue-coast);
+            return null
+          }; // or return undefined
+          setTotalValue(totalValue-coast);
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+      // Remove null or undefined items from the updated order
+      return updatedOrder.filter(item => item !== null); // or item !== undefined
+    });
   };
-  const totalValue = menuItems.reduce((total, item) => total + (item.quantity * item.cost), 0);
+  
+
+  const iteamHandler = (item,cost) => {
+      // Check if the item already exists in the order
+      const existingItemIndex = order.findIndex((existingItem) => existingItem._id === item._id);
+    
+      if (existingItemIndex !== -1) {
+        // If the item exists, update its quantity
+        const updatedOrder = [...order];
+        updatedOrder[existingItemIndex].quantity += 1;
+        setOrder(updatedOrder);
+        setTotalValue(totalValue+item.iteamPrice);
+      } else {
+        setTotalValue(totalValue+item.iteamPrice);
+        setOrder([...order, { ...item, quantity: 1 }]);
+      }
+    
+  }
 
   return (
     <div className={styles.mainDiv10}>
@@ -91,7 +152,7 @@ const OrderItems = () => {
             </div>
           </div>
           {
-            loading ? (<>Loadinhg</>) : (
+            loading ? (<>Loading</>) : (
 
               iteams === null ? (<>No Data</>) : (
                 <>
@@ -99,7 +160,7 @@ const OrderItems = () => {
                     <div className={styles.gridContainer}>
                       {iteams.map((item) => {
                         return (
-                          <Button2 key={item.id} item={item}></Button2>
+                          <Button2 key={item.id} item={item} iteamHandler={iteamHandler}></Button2>
                         )
                       })}
                     </div>
@@ -110,75 +171,93 @@ const OrderItems = () => {
             )
           }
         </div>
-        <div className={styles.cont3}>
-          <div className={styles.item1}>
-            <div className={styles.items}>Items</div>
-            <div className={styles.quantity}>QTY.</div>
-            <div className={styles.price}>Price</div>
-          </div>
-          <div className={styles.item2}>
-            {
-              menuItems.map((item) => {
+        {
+          loading ? (<>Loading</>) : (
 
-                return (
-                  <div className={styles.sub} key={item.id}>
-                    <div className={styles.name}>{item.name}</div>
-                    <div className={styles.quanBtn}>
-                      <div className={styles.subtract} onClick={() => handleDecrement(item.id, item.cost)}><FaMinus /></div>
-                      <div className={styles.count}>{item.quantity}</div>
-                      <div className={styles.add} onClick={() => handleIncrement(item.id, item.cost)}><FaPlus /></div>
+            <>
+
+              {
+                order.length == 0 ? (<>No Data Found</>) : (
+
+                  <>
+                    {
+                      console.log(order.length == 0)
+                    }
+                    <div className={styles.cont3}>
+                      <div className={styles.item1}>
+                        <div className={styles.items}>Items</div>
+                        <div className={styles.quantity}>QTY.</div>
+                        <div className={styles.price}>Price</div>
+                      </div>
+                      <div className={styles.item2}>
+                        {
+                          order.map((item) => {
+
+                            return (
+                              <div className={styles.sub} key={item._id}>
+                                <div className={styles.name}>{item.iteamName}</div>
+                                <div className={styles.quanBtn}>
+                                  <div className={styles.subtract} onClick={() => handleDecrement(item._id, item.iteamPrice)}><FaMinus /></div>
+                                  <div className={styles.count}>{item.quantity}</div>
+                                  <div className={styles.add} onClick={() => handleIncrement(item._id, item.iteamPrice)}><FaPlus /></div>
+                                </div>
+                                <div className={styles.cost}>{item.quantity * item.iteamPrice}</div>
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
+                      <div className={styles.item3}>
+                        <div className={styles.subitem1}>Total:</div>
+                        <div className={styles.subitem2}>{totalValue}</div>
+                      </div>
+                      <div className={styles.item4}>
+                        <div className={styles.sub}>
+                          <input type='checkbox' className={styles.input}></input>
+                          <div className={styles.text}>Cash</div>
+                        </div>
+                        <div className={styles.sub}>
+                          <input type='checkbox' className={styles.input}></input>
+                          <div className={styles.text}>Card</div>
+                        </div>
+                        <div className={styles.sub}>
+                          <input type='checkbox' className={styles.input}></input>
+                          <div className={styles.text}>Wallet</div>
+                        </div>
+                        <div className={styles.sub}>
+                          <input type='checkbox' className={styles.input}></input>
+                          <div className={styles.text}>Other</div>
+                        </div>
+                        <div className={styles.sub}>
+                          <input type='checkbox' className={styles.input}></input>
+                          <div className={styles.text}>Part</div>
+                        </div>
+                      </div>
+                      <div className={styles.item5}>
+                        <div className={styles.sub1}>
+                          <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
+                          <div className={styles.btn}>
+                            <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
+                          </div>
+                        </div>
+                        <div className={styles.sub2}>
+                          <input type='number' className={styles.input} placeholder='Discount(%)'></input>
+                          <div className={styles.btn}>
+                            <button className={styles.mainBtn2} isColor="white" isShape="oval" content="69"></button>
+                          </div>
+                        </div>
+                        <div className={styles.sub3}></div>
+                      </div>
                     </div>
-                    <div className={styles.cost}>{item.quantity * item.cost}</div>
-                  </div>
+                  </>
                 )
-              })
-            }
-          </div>
-          <div className={styles.item3}>
-            <div className={styles.subitem1}>Total:</div>
-            <div className={styles.subitem2}>{totalValue}</div>
-          </div>
-          <div className={styles.item4}>
-            <div className={styles.sub}>
-              <input type='checkbox' className={styles.input}></input>
-              <div className={styles.text}>Cash</div>
-            </div>
-            <div className={styles.sub}>
-              <input type='checkbox' className={styles.input}></input>
-              <div className={styles.text}>Card</div>
-            </div>
-            <div className={styles.sub}>
-              <input type='checkbox' className={styles.input}></input>
-              <div className={styles.text}>Wallet</div>
-            </div>
-            <div className={styles.sub}>
-              <input type='checkbox' className={styles.input}></input>
-              <div className={styles.text}>Other</div>
-            </div>
-            <div className={styles.sub}>
-              <input type='checkbox' className={styles.input}></input>
-              <div className={styles.text}>Part</div>
-            </div>
-          </div>
-          <div className={styles.item5}>
-            <div className={styles.sub1}>
-              <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
-              <div className={styles.btn}>
-                <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
-              </div>
-            </div>
-            <div className={styles.sub2}>
-              <input type='number' className={styles.input} placeholder='Discount(%)'></input>
-              <div className={styles.btn}>
-                <button className={styles.mainBtn2} isColor="white" isShape="oval" content="69"></button>
-              </div>
-            </div>
-            <div className={styles.sub3}></div>
-          </div>
-        </div>
+              }
+            </>)
+        }
       </div>
     </div >
   )
 }
+
 
 export default OrderItems
