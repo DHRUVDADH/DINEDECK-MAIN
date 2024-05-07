@@ -37,7 +37,7 @@ const Manager = () => {
             <div className={styles.Line}></div>
             <div className={styles.Content}>
               <div className={styles.sub1}>
-                <Link to="/Orders" className={`${styles.Buttons} nav-link`}>
+                <Link to="/OrderDeck" className={`${styles.Buttons} nav-link`}>
                   <div className={styles.buttonIcon}>
                     <img src="/Svg/manager-customers.png" alt="" />
                   </div>
