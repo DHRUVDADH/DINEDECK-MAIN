@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 const Button = (props) => {
   const {onclick, type, isShape, isColor, handlemouseenter, handlemouseleave, content } = props;
-
   if (isShape == "rect" && isColor == "red") {
     return (
       <button onClick={onclick}  className={styles.btn_red_rect} type={type}>{content}</button>

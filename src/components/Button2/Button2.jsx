@@ -11,7 +11,7 @@ const Button2 = ({item , iteamHandler}) => {
   }
   else if (item.iteamType == "Nonveg") {
     return (
-      <button onClick={()=>iteamHandler(item)} className={`${styles.btncont} ${styles.nonveg}`}>{item.iteamName}</button>
+      <button  onClick={()=>iteamHandler(item)} className={`${styles.btncont} ${styles.nonveg}`}>{item.iteamName}</button>
     )
   }
   else {

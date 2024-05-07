@@ -6,46 +6,14 @@ import Button2 from '../Button2/Button2'
 import Button from '../Button/Button'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { apiConnector } from '../../services/apiconnector'
+import { useNavigate } from 'react-router-dom'
+import {toast} from 'react-toastify'
+
 
 const OrderItems = () => {
 
-  const [menuItems, setMenuItems] = useState([
-    {
-      id: 1,
-      name: "Item name 1",
-      cost: 200,
-      type: "veg",
-      quantity: 0
-    },
-    {
-      id: 2,
-      name: "Item name 2",
-      cost: 300,
-      type: "nonveg",
-      quantity: 0
-    },
-    {
-      id: 3,
-      name: "Item name 3",
-      cost: 100,
-      type: "semiveg",
-      quantity: 0
-    },
-    {
-      id: 4,
-      name: "Item name 4",
-      cost: 200,
-      type: "veg",
-      quantity: 0
-    },
-    {
-      id: 5,
-      name: "Item name 5",
-      cost: 250,
-      type: "veg",
-      quantity: 0
-    }
-  ]);
+  
+const navigate = useNavigate();
 
   const [order, setOrder] = useState([]);
   const [count, setCount] = useState(0);
@@ -53,11 +21,22 @@ const OrderItems = () => {
   const [loading, setLoading] = useState(false);
   const [totalValue, setTotalValue] = useState(0);
 
+  const addOrder = async ()=>{
+    try{
+      const response = await apiConnector("POST", "http://localhost:3000/food/addOrder",{order , totalValue});
+      console.log(response)
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   useState(async () => {
     setLoading(true);
     try {
       const data = await apiConnector("GET", "http://localhost:3000/food/getiteam");
+      const data2 = await apiConnector("GET","http://localhost:3000/food/findorder")
       setIteams(data.data.data);
+      setOrder(data2.data.data.OrderItems);
     } catch (err) {
       console.log(err)
     }
@@ -84,31 +63,35 @@ const OrderItems = () => {
       });
       return updatedItems;
     });
+    // addOrder();
   };
   
 
-  const handleDecrement = (id,coast) => {
+  
+  const handleDecrement = (id, coast) => {
     setOrder(prevItems => {
       const updatedOrder = prevItems.map(item => {
         if (item._id === id) {
-          // If quantity is already 1, remove the item from the order
           if (item.quantity === 1) {
-            setTotalValue(totalValue-coast);
-            return null
-          }; // or return undefined
-          setTotalValue(totalValue-coast);
+            setTotalValue(totalValue - coast);
+            return null;
+          } 
+          setTotalValue(totalValue - coast);
           return { ...item, quantity: item.quantity - 1 };
         }
         return item;
       });
-      // Remove null or undefined items from the updated order
-      return updatedOrder.filter(item => item !== null); // or item !== undefined
+    
+      const filteredOrder = updatedOrder.filter(item => item !== null); // or item !== undefined
+      console.log(filteredOrder);
+      return filteredOrder;
     });
+    // addOrder();
   };
   
 
   const iteamHandler = (item,cost) => {
-      // Check if the item already exists in the order
+      
       const existingItemIndex = order.findIndex((existingItem) => existingItem._id === item._id);
     
       if (existingItemIndex !== -1) {
@@ -121,7 +104,18 @@ const OrderItems = () => {
         setTotalValue(totalValue+item.iteamPrice);
         setOrder([...order, { ...item, quantity: 1 }]);
       }
-    
+      // addOrder();
+  }
+
+  async function payHandler(){
+    try{
+      const response = await apiConnector("POST", "http://localhost:3000/food/paid");
+      console.log(response)
+      toast.success("Payment Done")
+      navigate('/orders')
+    }catch(err){
+      console.log(err)
+    }
   }
 
   return (
@@ -160,7 +154,7 @@ const OrderItems = () => {
                     <div className={styles.gridContainer}>
                       {iteams.map((item) => {
                         return (
-                          <Button2 key={item.id} item={item} iteamHandler={iteamHandler}></Button2>
+                          <Button2 key={item.id} item={item} iteamHandler={iteamHandler} ></Button2>
                         )
                       })}
                     </div>
@@ -192,7 +186,11 @@ const OrderItems = () => {
                       <div className={styles.item2}>
                         {
                           order.map((item) => {
-
+                            
+                              {
+                                addOrder()
+                              }
+                            
                             return (
                               <div className={styles.sub} key={item._id}>
                                 <div className={styles.name}>{item.iteamName}</div>
@@ -237,7 +235,7 @@ const OrderItems = () => {
                         <div className={styles.sub1}>
                           <input className={`${styles.input} nav-link`} placeholder='Settlement Amt'></input>
                           <div className={styles.btn}>
-                            <Button className={styles.mainBtn1} isColor="red" isShape="rect" content="Settles & Save" ></Button>
+                            <Button className={styles.mainBtn1}  onclick={payHandler} isColor="red" isShape="rect" content="Settles & Save" ></Button>
                           </div>
                         </div>
                         <div className={styles.sub2}>
