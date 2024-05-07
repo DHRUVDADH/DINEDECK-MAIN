@@ -72,13 +72,15 @@ const SignUp = () => {
   const toggleShowConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
+const prevent = (e)=>{
+  e.preventDefault();
+}
   return (
     <div className={styles.mainDiv2}>
       <div className={styles.cont1}>
         <img src="/Assets/signup-page-1.png" alt="" />
       </div>
-      <form onSubmit={onSubmit} className={styles.cont2}>
+      <form onSubmit={prevent} className={styles.cont2}>
         <div className={styles.item1}>Sign Up</div>
         <div className={styles.item2}>
           <div className={styles.firstname}>
@@ -123,14 +125,14 @@ const SignUp = () => {
         </div>
         <div className={styles.item3}>
           <div className={styles.but1}>
-            <Link to="/Manager" className={styles.Link}>
+            <div to="/Manager" className={styles.Link}>
               <Button
                 className="redhoverme"
                 isColor="white"
                 isShape="oval"
                 content="Manager"
               />
-            </Link>
+            </div>
           </div>
           <div className={styles.but2}>
             <div to="/Orders" className={styles.Link}>
@@ -159,6 +161,7 @@ const SignUp = () => {
             isColor="red"
             isShape="oval"
             content="Sign Up"
+            onclick={onSubmit}
           />
         </div>
         <div className={styles.item5}>
