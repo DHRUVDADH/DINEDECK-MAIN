@@ -3,7 +3,7 @@ const orderSchema = require("../models/order");
 
 const addOrder = async (req, res) => {
 
-    const { order , totalValue} = req.body;
+    const { order , totalValue,tableID} = req.body;
 
     if (!order || !totalValue) {
         return res.send({
@@ -14,7 +14,7 @@ const addOrder = async (req, res) => {
 
     try {
 
-        const unpaidOrder = await orderSchema.findOne({ isPaid: false });
+        const unpaidOrder = await orderSchema.findOne({ tableNo:tableID , isPaid: false });
 
         if (!unpaidOrder) {
             return res.send({
@@ -48,7 +48,17 @@ const addOrder = async (req, res) => {
 const find = async(req,res)=>{
 
     try{
-        const unpaidOrder = await orderSchema.findOne({ isPaid: false });
+        const {tableID} = req.query;
+        console.log(tableID)
+        if(!tableID){
+            return res.send({
+                success: false,
+                msg: "Data Missing"
+            });
+        }
+
+        const unpaidOrder = await orderSchema.findOne({ tableNo:tableID,isPaid: false });
+        console.log(unpaidOrder)
         if(unpaidOrder){
             return res.send({
                 success: true,
@@ -68,10 +78,11 @@ const find = async(req,res)=>{
 const create = async (req,res)=>{
    
     try {
+        const {tableID} = req.query;
         const postedData = await orderSchema.create({
             userName:"test",
-            tableno:5,
-            totalPrice:0
+            totalPrice:0,
+            tableNo:tableID
         });
         console.log(postedData);
         return res.send({
@@ -109,7 +120,8 @@ const create2 = async (req,res)=>{
 
 const paid = async (req,res)=>{
     try {
-        const postedData = await orderSchema.find({isPaid:false});
+        const {tableID} = req.body;
+        const postedData = await orderSchema.find({tableNo:tableID , isPaid:false});
         console.log(postedData)
         const updatedData =await orderSchema.findByIdAndUpdate({_id:postedData[0]._id},{
             isPaid:true

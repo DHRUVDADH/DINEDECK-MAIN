@@ -6,7 +6,7 @@ import Button2 from '../Button2/Button2'
 import Button from '../Button/Button'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { apiConnector } from '../../services/apiconnector'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {toast} from 'react-toastify'
 
 
@@ -14,16 +14,15 @@ const OrderItems = () => {
 
   
 const navigate = useNavigate();
-
+const {tableID} = useParams();
   const [order, setOrder] = useState([]);
   const [count, setCount] = useState(0);
   const [iteams, setIteams] = useState(null);
   const [loading, setLoading] = useState(false);
   const [totalValue, setTotalValue] = useState(0);
-
   const addOrder = async ()=>{
     try{
-      const response = await apiConnector("POST", "http://localhost:3000/food/addOrder",{order , totalValue});
+      const response = await apiConnector("POST", "http://localhost:3000/food/addOrder",{order , totalValue,tableID });
       console.log(response)
     }catch(err){
       console.log(err)
@@ -34,7 +33,7 @@ const navigate = useNavigate();
     setLoading(true);
     try {
       const data = await apiConnector("GET", "http://localhost:3000/food/getiteam");
-      const data2 = await apiConnector("GET","http://localhost:3000/food/findorder")
+      const data2 = await apiConnector("GET",`http://localhost:3000/food/findorder?tableID=${tableID}`)
       setIteams(data.data.data);
       setOrder(data2.data.data.OrderItems);
     } catch (err) {
@@ -52,6 +51,7 @@ const navigate = useNavigate();
 
 
   const handleIncrement = (id, cost) => {
+    cost = Number(cost);
     setOrder(prevItems => {
       const updatedItems = prevItems.map(item => {
         if (item._id === id) {
@@ -63,12 +63,13 @@ const navigate = useNavigate();
       });
       return updatedItems;
     });
-    // addOrder();
+    addOrder();
   };
   
 
   
   const handleDecrement = (id, coast) => {
+    coast = Number(coast);
     setOrder(prevItems => {
       const updatedOrder = prevItems.map(item => {
         if (item._id === id) {
@@ -86,7 +87,7 @@ const navigate = useNavigate();
       console.log(filteredOrder);
       return filteredOrder;
     });
-    // addOrder();
+    addOrder();
   };
   
 
@@ -104,12 +105,12 @@ const navigate = useNavigate();
         setTotalValue(totalValue+item.iteamPrice);
         setOrder([...order, { ...item, quantity: 1 }]);
       }
-      // addOrder();
+      addOrder();
   }
 
   async function payHandler(){
     try{
-      const response = await apiConnector("POST", "http://localhost:3000/food/paid");
+      const response = await apiConnector("POST", "http://localhost:3000/food/paid",{tableID});
       console.log(response)
       toast.success("Payment Done")
       navigate('/orders')
@@ -118,6 +119,7 @@ const navigate = useNavigate();
     }
   }
 
+  
   return (
     <div className={styles.mainDiv10}>
       <Navbar2 button="no"></Navbar2>
@@ -194,6 +196,9 @@ const navigate = useNavigate();
                             return (
                               <div className={styles.sub} key={item._id}>
                                 <div className={styles.name}>{item.iteamName}</div>
+                                {
+                                  console.log(order.totalPrice)
+                                }
                                 <div className={styles.quanBtn}>
                                   <div className={styles.subtract} onClick={() => handleDecrement(item._id, item.iteamPrice)}><FaMinus /></div>
                                   <div className={styles.count}>{item.quantity}</div>

@@ -13,6 +13,7 @@ import CheckEmail from "./components/CheckEmail/CheckEmail"
 import Settings from "./components/Settings/Settings"
 import UserInfo from "./components/UserInfo/UserInfo"
 import OrderItems from "./components/OrderItems/OrderItems"
+import Test from "./test/Test"
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <Route path="/CheckEmail" element={<CheckEmail />} />
         <Route path="/Settings" element={<Settings />} />
         <Route path="/UserInfo" element={<UserInfo />} />
-        <Route path="/OrderItems" element={<OrderItems />} />
+        <Route path="/OrderItems/:tableID" element={<OrderItems />} />
+        <Route path="/test" element={<Test />} />
         <Route path="*" element={<h1>404 page not found</h1>}></Route>
       </Routes >
     </div >

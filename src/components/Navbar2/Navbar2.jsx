@@ -42,24 +42,29 @@ const Navbar2 =  ({ button }) => {
             isVisibleHam ?
               <nav className={`${styles.NavbarToggle}`} id="navbar">
                 <ul className={`${styles.ulToggle} `}>
-                  <li className={styles.liToggle}>
-                    <div className={styles.liIconToggle}>
-                      <img src={check} alt="svg" />
-                    </div>
-                    <div className={styles.liTextToggle}>Billings</div>
-                  </li>
-                  <Link to="/Manager" className={`${styles.liToggle} nav-link`}>
-                    <div className={styles.liIconToggle}>
-                      <img src={check} alt="svg" />
-                    </div>
-                    <div className={styles.liTextToggle}>Operations</div>
-                  </Link>
+                
                   <li className={styles.liToggle}>
                     <div className={styles.liIconToggle}>
                       <img src={check} alt="svg" />
                     </div>
                     <div className={styles.liTextToggle}>Reports</div>
                   </li>
+                 
+                  <Link to="/Orders" className={`${styles.liToggle} nav-link`}>
+                    <div className={styles.liIconToggle}>
+                      <img src={check} alt="svg" />
+                    </div>
+                    <div className={styles.liTextToggle}>Billings</div>
+                  </Link>
+
+                 
+                  <Link to="/Manager" className={`${styles.liToggle} nav-link`}>
+                    <div className={styles.liIconToggle}>
+                      <img src={check} alt="svg" />
+                    </div>
+                    <div className={styles.liTextToggle}>Operations</div>
+                    </Link>
+                 
                 </ul>
               </nav>
               : <></>

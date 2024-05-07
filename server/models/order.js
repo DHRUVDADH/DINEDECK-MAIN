@@ -23,9 +23,6 @@ const OrderSchema = new Schema({
     address: {
         type: String,
     },
-    tableno: {
-        type: Number,
-    },
     paytype: {
         type: String,
         default: "cash"
@@ -45,7 +42,10 @@ const OrderSchema = new Schema({
     crt_time: {
         type: Date,
         default: Date.now(),
-    }
+    },
+    tableNo:{
+        type: mongoose.Schema.Types.ObjectId
+    },
 
 })
 

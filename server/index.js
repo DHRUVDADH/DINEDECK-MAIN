@@ -6,8 +6,8 @@ const item = require("./routes/iteam");
 const {halls} = require("./controller/hall")
 require("dotenv").config();
 const PORT = process.env.PORT || 4000 ;
-const cookie=require("cookie-parser");
-app.use(cookie());
+var cookieParser = require('cookie-parser')
+app.use(cookieParser());
 app.use(express.json());
 app.use(
     cors({
@@ -21,7 +21,6 @@ dbConnect();
 
 app.use("/api/v1/auth",router);
 app.use('/food',item);
-
 app.post('/test',halls)
 
 app.listen( PORT ,()=>
